@@ -118,3 +118,8 @@
 - SVSでは、王城決戦の前後に相手国の領主が4471に来て、ポイント獲得のため都市を攻撃することがあります。 
 - 特に、参加せずオフラインになる方は、都市攻撃を防ぐため24時間シールドの使用を推奨します。 
 - 自分で被害を防ぐことで、限られた救済ポイントを必要な方へ回すことができます。 
+
+
+# ■その他
+- [GiftCode](https://wosrewards.com/giftcodes)
+- [Official Gift Center](https://wos-giftcode.centurygame.com/)
