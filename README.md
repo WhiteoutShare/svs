@@ -5,7 +5,7 @@
 | 領主装備 | ━ | ━ | ━ | ━ | 👘 |
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
 | 火晶消費 | <img src="./images/item_icon_100081.png" height="15"> | <img src="./images/item_icon_100081.png" height="15" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="15"> |
-| 英雄進化 | ━ | ⚫︎ | ⚫︎ | ━ | ━ |
+| 英雄進化 | ━ | <img src="./images/item_icon_500220.png" height="15"> | <img src="./images/item_icon_500220.png" height="15"> | ━ | ━ |
 | ﾗｯｷﾙｰﾚｯﾄ | ━ | 🎯 | 🎯 | ━ | ━ |
 | ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | 🐈 | ━ | 🐈 |
 | 訓練昇格 | ━ | ━ | ━ | ✊ | ━ |
