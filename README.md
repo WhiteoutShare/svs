@@ -4,7 +4,7 @@
 |---|---|---|---|---|---|
 | 領主装備 | ━ | ━ | ━ | ━ | 👘 |
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
-| 火晶消費 | <img src="./images/item_icon_100081.png" height="18"> | <img src="./images/item_icon_100081.png" height="18" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="18"> |
+| 火晶消費 | <img src="./images/item_icon_100081.png" height="15"> | <img src="./images/item_icon_100081.png" height="15" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="15"> |
 | 英雄進化 | ━ | ⚫︎ | ⚫︎ | ━ | ━ |
 | ﾗｯｷﾙｰﾚｯﾄ | ━ | 🎯 | 🎯 | ━ | ━ |
 | ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | 🐈 | ━ | 🐈 |
