@@ -2,16 +2,16 @@
 
 |  | 月 | 火 | 水 | 木 | 金 |
 |---|---|---|---|---|---|
-| 領主装備 | ━ | ━ | ━ | ━ | 👘 |
+| 領主装備 | ━ | ━ | ━ | ━ | <img src="./images/icon3.png" height="20"> |
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
 | 火晶消費 | <img src="./images/item_icon_100081.png" height="20"> | <img src="./images/item_icon_100081.png" height="20" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="20"> |
 | 英雄進化 | ━ | <img src="./images/item_icon_500220.png" height="20"> | <img src="./images/item_icon_500220.png" height="20"> | ━ | ━ |
 | ﾗｯｷﾙｰﾚｯﾄ | ━ | 🎯 | 🎯 | ━ | ━ |
-| ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | 🐈 | ━ | 🐈 |
+| ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="20"> | ━ | <img src="./images/activity_icon_15.png" height="20"> |
 | 訓練昇格 | ━ | ━ | ━ | ✊ | ━ |
 | 各種加速 | ⚫︎ | ⚫︎ | ━ | ━ | ⚫︎ |
 | エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
-| 専用パー | ━ | ━ | ━ | 🔫 | 🔫 |
+| 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
 | 資源採集 | ━ | 🍖 | ━ | ━ | ━ |
 | 巨獣野獣 | ━ | ━ | 🐘 | ━ | ━ |
 | ミスリル | ━ | ━ | ━ | <img src="./images/item_icon_500235.png" height="20"> | <img src="./images/item_icon_500235.png" height="20"> |
