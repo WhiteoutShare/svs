@@ -12,7 +12,7 @@
 | 各種加速 | <img src="./images/S__29384833_0_0.jpg" height="20"> | <img src="./images/S__29384833_0_0.jpg" height="20"> | ━ | ━ | <img src="./images/S__29384833_0_0.jpg" height="20"> |
 | エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
 | 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
-| 資源採集 | ━ | 🍖 | ━ | ━ | ━ |
+| 資源採集 | ━ | <img src="./images/S__29384884.jpg" height="20"> | ━ | ━ | ━ |
 | 巨獣野獣 | ━ | ━ | <img src="./images/S__29384864.jpg" height="20"> | ━ | ━ |
 | ミスリル | ━ | ━ | ━ | <img src="./images/item_icon_500235.png" height="20"> | <img src="./images/item_icon_500235.png" height="20"> |
 
