@@ -2,7 +2,7 @@
 
 |  | 月 | 火 | 水 | 木 | 金 |
 |---|---|---|---|---|---|
-| 領主装備 | ━ | ━ | ━ | ━ | <img src="./images/icon3.png" height="20"> |
+| 領主装備 | ━ | ━ | ━ | ━ | <img src="./images/S__29384863.jpg" height="20"> |
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
 | 火晶消費 | <img src="./images/item_icon_100081.png" height="20"> | <img src="./images/item_icon_100081.png" height="20" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="20"> |
 | 英雄進化 | ━ | <img src="./images/S__29384851_0.jpg" height="20"> | <img src="./images/S__29384851_0.jpg" height="20"> | ━ | ━ |
