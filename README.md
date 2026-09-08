@@ -1,4 +1,4 @@
-# 🏰 SVS CASTLE BATTLE RULES
+# 🏰 SVS 王城決戦ルール
 
 ❗ **19:00：［国境開放］シールド！**
 
