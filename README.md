@@ -6,7 +6,7 @@
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
 | 火晶消費 | <img src="./images/item_icon_100081.png" height="20"> | <img src="./images/item_icon_100081.png" height="20" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="20"> |
 | 英雄進化 | ━ | <img src="./images/item_icon_500220.png" height="20"> | <img src="./images/item_icon_500220.png" height="20"> | ━ | ━ |
-| ﾗｯｷﾙｰﾚｯﾄ | ━ | 🎯 | 🎯 | ━ | ━ |
+| ﾗｯｷﾙｰﾚｯﾄ | ━ | <img src="./images/lucky.png" height="20"> | <img src="./images/lucky.png" height="20"> | ━ | ━ |
 | ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="20"> | ━ | <img src="./images/activity_icon_15.png" height="20"> |
 | 訓練昇格 | ━ | ━ | ━ | ✊ | ━ |
 | 各種加速 | ⚫︎ | ⚫︎ | ━ | ━ | ⚫︎ |
