@@ -1,3 +1,34 @@
+# 🏰 SVS CASTLE BATTLE RULES
+
+❗ **19:00：［国境開放］シールド！**
+
+⛔ **20:30～翌02:30：城戦中の都市攻撃禁止！**
+
+🏰 **21:00：［王城決戦（SFC）開始］**
+
+⛔ **翌02:00～02:30：SFC終了後30分間は攻撃禁止！**
+
+✅ **翌02:30～07:00：都市・タイルへの攻撃可能**
+
+❗ **07:00：［サーバー閉鎖・戦争フェーズ終了］**  
+
+# 🏰 SVS CASTLE BATTLE RULES
+
+❗ **10 UTC: [BORDERS OPEN] SHIELD!!!**
+
+⛔ **11:30 UTC - 17:30 UTC: NO CITY attacks during castle battle!**
+
+🏰 **12 UTC - [SFC BEGINS]**
+
+⛔ **17 UTC - 17:30 UTC: 30 minutes cooldown after SFC - NO ATTACKS!**
+
+✅ **17:30 UTC - 22 UTC: attacks on cities & tiles allowed**
+
+❗ **22 UTC: [SERVER CLOSES, BATTLE PHASE ENDS]**
+
+
+
+
 ## 🌸準備フェーズ
 
 |  | 月 | 火 | 水 | 木 | 金 |
