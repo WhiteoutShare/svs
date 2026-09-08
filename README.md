@@ -9,7 +9,7 @@
 | ﾗｯｷﾙｰﾚｯﾄ | ━ | <img src="./images/lucky.png" height="20"> | <img src="./images/lucky.png" height="20"> | ━ | ━ |
 | ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="20"> | ━ | <img src="./images/activity_icon_15.png" height="20"> |
 | 訓練昇格 | ━ | ━ | ━ | ✊ | ━ |
-| 各種加速 | ⚫︎ | ⚫︎ | ━ | ━ | ⚫︎ |
+| 各種加速 | <img src="./images/speedup.png" height="20"> | <img src="./images/speedup.png" height="20"> | ━ | ━ | <img src="./images/speedup.png" height="20"> |
 | エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
 | 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
 | 資源採集 | ━ | 🍖 | ━ | ━ | ━ |
