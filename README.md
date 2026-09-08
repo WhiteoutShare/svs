@@ -2,19 +2,19 @@
 
 |  | 月 | 火 | 水 | 木 | 金 |
 |---|---|---|---|---|---|
-| 領主装備 | ━ | ━ | ━ | ━ | <img src="./images/S__29384863.jpg" height="20"> |
+| 領主装備 | ━ | ━ | ━ | ━ | <img src="./images/S__29384863.jpg" height="25"> |
 | 領主宝石 | 💍 | ━ | 💍 | 💍 | ━ |
-| 火晶消費 | <img src="./images/item_icon_100081.png" height="20"> | <img src="./images/item_icon_100081.png" height="20" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="20"> |
-| 英雄進化 | ━ | <img src="./images/S__29384851_0.jpg" height="20"> | <img src="./images/S__29384851_0.jpg" height="20"> | ━ | ━ |
-| ﾗｯｷﾙｰﾚｯﾄ | ━ | <img src="./images/lucky.png" height="20"> | <img src="./images/lucky.png" height="20"> | ━ | ━ |
-| ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="20"> | ━ | <img src="./images/activity_icon_15.png" height="20"> |
-| 訓練昇格 | ━ | ━ | ━ | <img src="./images/S__29384853_0.jpg" height="20"> | ━ |
-| 各種加速 | <img src="./images/S__29384833_0_0.jpg" height="20"> | <img src="./images/S__29384833_0_0.jpg" height="20"> | ━ | ━ | <img src="./images/S__29384833_0_0.jpg" height="20"> |
-| エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
-| 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
-| 資源採集 | ━ | <img src="./images/S__29384884.jpg" height="20"> | ━ | ━ | ━ |
-| 巨獣野獣 | ━ | ━ | <img src="./images/S__29384864.jpg" height="20"> | ━ | ━ |
-| ミスリル | ━ | ━ | ━ | <img src="./images/item_icon_500235.png" height="20"> | <img src="./images/item_icon_500235.png" height="20"> |
+| 火晶消費 | <img src="./images/item_icon_100081.png" height="25"> | <img src="./images/item_icon_100081.png" height="25" > | ━ | ━ | <img src="./images/item_icon_100081.png" height="25"> |
+| 英雄進化 | ━ | <img src="./images/S__29384851_0.jpg" height="25"> | <img src="./images/S__29384851_0.jpg" height="25"> | ━ | ━ |
+| ﾗｯｷﾙｰﾚｯﾄ | ━ | <img src="./images/lucky.png" height="25"> | <img src="./images/lucky.png" height="25"> | ━ | ━ |
+| ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="25"> | ━ | <img src="./images/activity_icon_15.png" height="25"> |
+| 訓練昇格 | ━ | ━ | ━ | <img src="./images/S__29384853_0.jpg" height="25"> | ━ |
+| 各種加速 | <img src="./images/S__29384833_0_0.jpg" height="25"> | <img src="./images/S__29384833_0_0.jpg" height="25"> | ━ | ━ | <img src="./images/S__29384833_0_0.jpg" height="25"> |
+| エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="25"> | <img src="./images/item_icon_500240.png" height="25"> |
+| 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="25"> | <img src="./images/hero-gears.png" height="25"> |
+| 資源採集 | ━ | <img src="./images/S__29384884.jpg" height="25"> | ━ | ━ | ━ |
+| 巨獣野獣 | ━ | ━ | <img src="./images/S__29384864.jpg" height="25"> | ━ | ━ |
+| ミスリル | ━ | ━ | ━ | <img src="./images/item_icon_500235.png" height="25"> | <img src="./images/item_icon_500235.png" height="25"> |
 
 ### ⛏️ SVS 2日目（火曜日）：資源採集
 
