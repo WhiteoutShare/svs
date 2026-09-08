@@ -13,7 +13,7 @@
 | エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
 | 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
 | 資源採集 | ━ | 🍖 | ━ | ━ | ━ |
-| 巨獣野獣 | ━ | ━ | 🐘 | ━ | ━ |
+| 巨獣野獣 | ━ | ━ | <img src="./images/S__29384864.jpg" height="20"> | ━ | ━ |
 | ミスリル | ━ | ━ | ━ | <img src="./images/item_icon_500235.png" height="20"> | <img src="./images/item_icon_500235.png" height="20"> |
 
 ### ⛏️ SVS 2日目（火曜日）：資源採集
