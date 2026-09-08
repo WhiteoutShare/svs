@@ -8,7 +8,7 @@
 | 英雄進化 | ━ | <img src="./images/item_icon_500220.png" height="20"> | <img src="./images/item_icon_500220.png" height="20"> | ━ | ━ |
 | ﾗｯｷﾙｰﾚｯﾄ | ━ | <img src="./images/lucky.png" height="20"> | <img src="./images/lucky.png" height="20"> | ━ | ━ |
 | ﾍﾟｯﾄｱﾚｺﾚ | ━ | ━ | <img src="./images/activity_icon_15.png" height="20"> | ━ | <img src="./images/activity_icon_15.png" height="20"> |
-| 訓練昇格 | ━ | ━ | ━ | ✊ | ━ |
+| 訓練昇格 | ━ | ━ | ━ | <img src="./images/S__29384853_0.jpg" height="20"> | ━ |
 | 各種加速 | <img src="./images/S__29384833_0_0.jpg" height="20"> | <img src="./images/S__29384833_0_0.jpg" height="20"> | ━ | ━ | <img src="./images/S__29384833_0_0.jpg" height="20"> |
 | エナジ石 | ━ | ━ | ━ | <img src="./images/item_icon_500240.png" height="20"> | <img src="./images/item_icon_500240.png" height="20"> |
 | 専用パー | ━ | ━ | ━ | <img src="./images/hero-gears.png" height="20"> | <img src="./images/hero-gears.png" height="20"> |
