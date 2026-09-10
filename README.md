@@ -54,8 +54,8 @@
 
 # ■座席図(更新中)
 
-<img src="https://s.kuku.lu/image.php/5e3ejj5h0" style="height:500px; width:auto;">
-#
+<img src="https://s.kuku.lu/image.php/5e3ejj5h0" style="height:500px; width:auto;">  
+
 
 ## 🌸準備フェーズ
 
