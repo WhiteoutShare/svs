@@ -55,7 +55,7 @@
 # 座席図(更新中)
 
 <img src="https://s.kuku.lu/image.php/5e3ejj5h0"
-     style="max-width:100%; max-height:500px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
+     style="max-width:100%; max-height:600px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
 
 # 同盟参加情報まとめ
 - 各同盟の参加方法は、それぞれの同盟の盟主にお任せします。
