@@ -56,6 +56,9 @@
 
 <img src="https://s.kuku.lu/image.php/5e3ejj5h0" style="height:500px; width:auto;">  
 
+# 同盟参加情報まとめ
+- 各同盟の参加方法は、それぞれの同盟の盟主にお任せします。
+- [参加情報](https://whiteoutshare.github.io/svs/tmp/svs260912)
 
 ## 🌸準備フェーズ
 
