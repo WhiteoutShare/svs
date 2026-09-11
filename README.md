@@ -72,6 +72,7 @@
 <img src="https://s.kuku.lu/image.php/311o663i"
      style="max-width:100%; max-height:600px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
 - 赤い線は、同盟グループごとの境界線を示しています。
+- 青い線は、同じグループ内の同盟間の境界線です。お互いに譲り合い、バランスよく占領するようにしてください。
 - レッドゾーンでは、各同盟の集結主を優先する。
 - 特定の目的だけを優先するのではなく、お互いに助け合いながら進めましょう。
 - 座席リンク：　　https://s.kuku.lu/image.php/311o663i
