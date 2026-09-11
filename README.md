@@ -52,12 +52,14 @@
 - 強力な相手から攻撃を受け、シールドを使用できない場合は、**システムの充能型ランダム移転**を使用して、現在の攻撃から逃れることもできます。
 - 自分で被害を防ぐことで、限られた救済ポイントを必要な方へ回すことができます。
 
-# 座席図(更新中)
+# 座席図
 
 <img src="https://s.kuku.lu/image.php/1342g8f0o"
      style="max-width:100%; max-height:600px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
 - レッドゾーンでは、各同盟の集結主を優先する。
 - 特定の目的だけを優先するのではなく、お互いに助け合いながら進めましょう。
+- 座席リンク
+- https://s.kuku.lu/image.php/1342g8f0o
 
 ## 🔥 砲台作戦方針
 
