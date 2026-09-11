@@ -56,6 +56,8 @@
 
 <img src="https://s.kuku.lu/image.php/1342g8f0o"
      style="max-width:100%; max-height:600px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
+- レッドゾーンでは、各同盟の集結主を優先する。
+- 特定の目的だけを優先するのではなく、お互いに助け合いながら進めましょう。
 
 ## 🔥 砲台作戦方針
 
