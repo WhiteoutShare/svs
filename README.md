@@ -54,7 +54,7 @@
 
 # 座席図(更新中)
 
-<img src="https://s.kuku.lu/image.php/5e3ejj5h0"
+<img src="https://s.kuku.lu/image.php/1342g8f0o"
      style="max-width:100%; max-height:600px; width:auto; height:auto; border:1px solid #000; box-sizing:border-box;"> 
 
 ## 🔥 砲台作戦方針
