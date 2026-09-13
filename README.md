@@ -1,6 +1,6 @@
 # 🏰 SVS 王城決戦アンケート
 
-https://forms.gle/oFAcxqadV4FMhmXf6
+[https://forms.gle/oFAcxqadV4FMhmXf6](https://forms.gle/oFAcxqadV4FMhmXf6)
 
 今回の王城決戦について、皆さんの意見や感想を集め、次回の王城決戦の参考にしたいと思います。
 
