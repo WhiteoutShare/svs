@@ -1,7 +1,9 @@
 # 📊 SVSアンケート・改善課題報告
 
 > 📊 **アンケートデータ（元データ）**  
-> [SVSアンケート結果（Excel）](https://view.officeapps.live.com/op/view.aspx?src=https://whiteoutshare.github.io/svs/surveys/svssurvey260914.xlsx)  
+> <a href="https://view.officeapps.live.com/op/view.aspx?src=https://whiteoutshare.github.io/svs/surveys/svssurvey260914.xlsx" target="_blank" rel="noopener noreferrer">
+SVSアンケート結果（Excel）
+</a>
 > ※ 本ページの集計・分析は、上記のデータを基にしています。
 
 
