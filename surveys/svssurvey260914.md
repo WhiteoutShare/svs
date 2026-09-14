@@ -1,7 +1,7 @@
 # 📊 SVSアンケート・改善課題報告
 
 > 📊 **アンケートデータ（元データ）**  
-> [SVSアンケート結果（Excel）](https://whiteoutshare.github.io/svs/surveys/svssurvey260914.xlsx)  
+> [SVSアンケート結果（Excel）](https://view.officeapps.live.com/op/view.aspx?src=https://whiteoutshare.github.io/svs/surveys/svssurvey260914.xlsx)  
 > ※ 本ページの集計・分析は、上記のデータを基にしています。
 
 
