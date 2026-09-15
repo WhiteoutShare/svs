@@ -9,13 +9,8 @@
 
 ご協力よろしくお願いします！🙇
 
-# 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/svs/svs260912)
+# 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/svs/svs260912)  
 
----
 
-# 同盟参加情報まとめ
-- 各同盟の参加方法は、それぞれの同盟の盟主にお任せします。
-- [参加情報](https://whiteoutshare.github.io/svs/tmp/svs260912)
-
-# 🌸[SvS準備フェーズ](https://whiteoutshare.github.io/svs/SvSSchedule)
+# 🌸[SVS準備フェーズ](https://whiteoutshare.github.io/svs/SvSSchedule)
 
