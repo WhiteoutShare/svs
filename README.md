@@ -1,3 +1,4 @@
+<!--
 # 🏰 SVS 王城決戦アンケート
 
 [https://forms.gle/oFAcxqadV4FMhmXf6](https://forms.gle/oFAcxqadV4FMhmXf6)
@@ -8,7 +9,7 @@
 無理に回答する必要はありませんので、皆さんそれぞれ気軽に参加してください😊
 
 ご協力よろしくお願いします！🙇
-
+-->
 # 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/svs/svs260912)  
 
 
