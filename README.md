@@ -10,8 +10,12 @@
 
 ご協力よろしくお願いします！🙇
 -->
+
+# [🏰 王城位置配置のお知らせ](https://whiteoutshare.github.io/svs/castle/260926)
+<!--
 # 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/svs/svs260912)  
 
 
 # 🌸[SVS準備フェーズ](https://whiteoutshare.github.io/svs/SvSSchedule)
+-->
 
