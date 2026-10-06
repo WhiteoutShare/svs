@@ -7,7 +7,7 @@
 ## ここから始まるヒゲ物語
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-01.jpg" alt="先代スミスを探せ①">
+<img src="i/20261006-01.jpg" alt="ヒゲ物語">
 </div>
 <div class="blog-content">
 ここから始まるヒゲ物語（略してヒゲモノ）これから起きる数々の苦難、ひげっぴの運命や如何に！
@@ -17,7 +17,7 @@
 ## ひげっぴの運命や如何に！
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-02.jpg" alt="先代スミスを探せ①">
+<img src="i/20261006-02.jpg" alt="ひげっぴの運命や如何に！">
 </div>
 <div class="blog-content">
 日頃のサボり癖から、昔の風貌は何処へ、、かつての美貌を取り戻すことはできるのか
@@ -29,7 +29,7 @@
 ## 出産？！？！？！？
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-03.png" alt="先代スミスを探せ①">
+<img src="i/20261006-03.png" alt="出産？！？！？！？">
 </div>
 <div class="blog-content">
 ていたらくな生活が原因ではなかった！まさかの出産！元気な男の子が産まれました。名前はスミスJr.
@@ -41,7 +41,7 @@
 ## 訃報
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-04.png" alt="先代スミスを探せ①">
+<img src="i/20261006-04.png" alt="訃報">
 </div>
 <div class="blog-content">
 先代スミスが原因不明の死を迎え、怒りと悲しみに暮れる日々。息子と強く生きることを誓った。
@@ -53,7 +53,7 @@
 ## 大きくなったな。スミスJr.
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-05.png" alt="先代スミスを探せ①">
+<img src="i/20261006-05.png" alt="大きくなったな。スミスJr.">
 </div>
 <div class="blog-content">
 あれから時はすぎ早5年、スクスクと強く生きる親子たち。
@@ -65,7 +65,7 @@
 ## おめでとう
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-06.png" alt="先代スミスを探せ①">
+<img src="i/20261006-06.png" alt="おめでとう">
 </div>
 <div class="blog-content">
 小学校の運動会。親子の絆は強く、親子競技では1位！
@@ -78,7 +78,7 @@
 ## 卒業
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-07.png" alt="先代スミスを探せ①">
+<img src="i/20261006-07.png" alt="卒業">
 </div>
 <div class="blog-content">
 大きくなったなスミスJr.は小学校の卒業式を迎えた。
