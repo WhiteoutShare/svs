@@ -5,7 +5,7 @@
 <div style="flex:0 0 150px; text-align:center;">
 
 <img src="i/20261006.png"
-     style="width:250px; border-radius:12px;">
+     style="width:450px; border-radius:12px;">
 
 </div>
 
@@ -26,7 +26,7 @@
 <div style="flex:0 0 150px; text-align:center;">
 
 <img src="i/20261006.png"
-     style="width:250px; border-radius:12px;">
+     style="width:450px; border-radius:12px;">
 
 </div>
 
