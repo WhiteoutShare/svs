@@ -30,7 +30,6 @@
 </div>
 </div>
 
-
 ## 大きくなったな。スミスJr.
 <div class="blog-item">
 <div class="blog-image">
@@ -67,7 +66,6 @@
 次回「訃報」
 </div>
 </div>
-
 
 ## ひげっぴの運命や如何に！
 <div class="blog-item">
