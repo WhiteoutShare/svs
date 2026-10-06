@@ -48,6 +48,7 @@
 
 </div>
 
+
 ## 出産？！？！？！？
 <div class="blog-item">
 <div class="blog-image">
@@ -55,12 +56,12 @@
 </div>
 <div class="blog-content">
 ていたらくな生活が原因ではなかった！まさかの出産！元気な男の子が産まれました。名前はスミスJr.
-
 <br><br>
 
 次回「訃報」
 </div>
 </div>
+
 
 ## ひげっぴの運命や如何に！
 <div class="blog-item">
