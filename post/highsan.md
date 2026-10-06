@@ -2,17 +2,7 @@
   <link rel="stylesheet" href="./css/highsan.css">
 </head>
 
-# 🔥 ヒゲ物語
-
-## 先代スミスを探せ②
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261006.png" alt="先代スミスを探せ②">
-</div>
-<div class="blog-content">
-ここに②の内容を追加します。
-</div>
-</div>
+# 🔥 ヒゲ物語、絶賛更新中！
 
 ## 先代スミスを探せ①
 <div class="blog-item">
