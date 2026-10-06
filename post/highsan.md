@@ -1,7 +1,7 @@
 ## 🔍 先代スミスを探せ①
 
 <p align="center">
-  <img src="../images/001.png"
+  <img src="../i/20261006.png"
        style="width:100%; max-width:400px; border-radius:12px;">
 </p>
 
