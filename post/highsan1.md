@@ -140,7 +140,7 @@
 ## 努力のその先に、、
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-12.png" alt="努力のその先に、、">
+<img src="i/20261006-12.jpg" alt="努力のその先に、、">
 </div>
 <div class="blog-content">
 ホワサバ国最難関の東京大学へ合格を決める。最大限の親孝行を果たしたスミスJr.。これから始まる新生活に胸を膨らませる。
