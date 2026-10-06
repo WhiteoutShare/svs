@@ -49,6 +49,19 @@
 </div>
 
 
+## 訃報
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-04.png" alt="先代スミスを探せ①">
+</div>
+<div class="blog-content">
+先代スミスが原因不明の死を迎え、怒りと悲しみに暮れる日々。息子と強く生きることを誓った。
+<br><br>
+
+次回「大きくなったな。スミスJr.」
+</div>
+</div>
+
 ## 出産？！？！？！？
 <div class="blog-item">
 <div class="blog-image">
@@ -77,21 +90,13 @@
 </div>
 
 ## ここから始まるヒゲ物語
-
 <div class="blog-item">
-
 <div class="blog-image">
-
 <img src="i/20261006-01.jpg" alt="先代スミスを探せ①">
-
 </div>
-
 <div class="blog-content">
-
 ここから始まるヒゲ物語（略してヒゲモノ）これから起きる数々の苦難、ひげっぴの運命や如何に！
-
 </div>
-
 </div>
 
 <!--
