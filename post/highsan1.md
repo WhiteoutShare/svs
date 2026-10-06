@@ -88,3 +88,29 @@
 </div>
 </div>
 
+## 中学校へ
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-08.png" alt="中学校へ">
+</div>
+<div class="blog-content">
+中学校の入学式。新生活の始まりだが、不穏な空気が迷う、、、
+<br><br>
+次回「家族の絆、崩壊」
+</div>
+</div>
+
+## 家族の絆、崩壊
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-09.png" alt="家族の絆、崩壊">
+</div>
+<div class="blog-content">
+周りにつられ不良への道を進んでしまったスミスJr.
+親子の絆が崩壊、このままで大丈夫なのか、、？！？！
+<br><br>
+次回「鉄拳制裁」
+</div>
+</div>
+
+
