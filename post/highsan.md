@@ -2,7 +2,7 @@
   <link rel="stylesheet" href="./css/highsan.css">
 </head>
 
-# 🔥 HIGEさん物語
+# 🔥 ヒゲ物語
 
 ## 先代スミスを探せ②
 <div class="blog-item">
