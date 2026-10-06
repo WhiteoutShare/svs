@@ -173,3 +173,28 @@
 </div>
 </div>
 
+## 結果発表
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-15.png" alt="結果発表">
+</div>
+<div class="blog-content">
+なんと1位！金メダルを獲得！！
+<br><br>
+次回「初恋」
+</div>
+</div>
+
+## 初恋
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-16.png" alt="初恋">
+</div>
+<div class="blog-content">
+マネージャーと恋に落ちたスミスJr.。生まれて初めて、女性からの温もりを感じたのであった。
+<br><br>
+エピソード1 完結
+</div>
+</div>
+
+
