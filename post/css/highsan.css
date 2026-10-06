@@ -20,6 +20,7 @@
 .blog-content {
   flex: 1;
   line-height: 1.8;
+  font-size: 20px;
 }
 
 /* スマートフォン */
@@ -42,5 +43,6 @@
 
   .blog-content {
     width: 100%;
+    font-size: 17px;
   }
 }
