@@ -1,8 +1,8 @@
 ## 🔍 先代スミスを探せ①
 
 <p align="center">
-  <img src="../i/20261006.png"
-       style="width:100%; max-width:400px; border-radius:12px;">
+  <img src="i/20261006.png"
+       style="width:100%; max-width:150px; border-radius:12px;">
 </p>
 
 デロリアンの開発者である先代スミスを探す親子。
