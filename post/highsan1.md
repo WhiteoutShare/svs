@@ -113,4 +113,63 @@
 </div>
 </div>
 
+## 鉄拳制裁
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-10.png" alt="鉄拳制裁">
+</div>
+<div class="blog-content">
+改心させるべく、初めて子供に手を挙げたひげっぴ。愛情を込めた鉄拳制裁。スミスJr.に気持ちが伝わるのか、、
+<br><br>
+次回「努力」
+</div>
+</div>
+
+## 努力
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-11.png" alt="努力">
+</div>
+<div class="blog-content">
+愛の鉄拳制裁により、心を入れ替えたスミスJr.。父親のために親孝行をすべく、猛勉強を始めることに。
+<br><br>
+次回「努力のその先に、、」
+</div>
+</div>
+
+## 努力のその先に、、
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-12.png" alt="努力のその先に、、">
+</div>
+<div class="blog-content">
+ホワサバ国最難関の東京大学へ合格を決める。最大限の親孝行を果たしたスミスJr.。これから始まる新生活に胸を膨らませる。
+<br><br>
+次回「先代スミスを夢見て」
+</div>
+</div>
+
+## 先代スミスを夢見て
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-13.png" alt="先代スミスを夢見て">
+</div>
+<div class="blog-content">
+先代スミスを夢見て鍛治職人への道を歩む。鍛治部へ入部し、猛勉強。
+<br><br>
+次回「ブラックスミスオリンピック開催」
+</div>
+</div>
+
+## ブラックスミスオリンピック開催
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006-14.png" alt="ブラックスミスオリンピック開催">
+</div>
+<div class="blog-content">
+いよいよ待ちに待った、オリンピック。マネージャーからの応援に勇気をもらい、全力を出し切る。
+<br><br>
+次回「結果発表」
+</div>
+</div>
 
