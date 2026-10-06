@@ -1,53 +1,15 @@
-<style>
-.blog-item {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin: 30px 0 50px 0;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.blog-image {
-  flex: 0 0 450px;
-  text-align: center;
-}
+  <title>HIGEさん物語</title>
 
-.blog-image img {
-  width: 450px;
-  max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-}
+  <link rel="stylesheet" href="./css/highsan.css">
+</head>
 
-.blog-content {
-  flex: 1;
-  line-height: 1.8;
-}
-
-/* スマートフォン */
-@media screen and (max-width: 768px) {
-  .blog-item {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .blog-image {
-    flex: none;
-    width: 100%;
-  }
-
-  .blog-image img {
-    width: 100%;
-    max-width: 450px;
-  }
-
-  .blog-content {
-    width: 100%;
-  }
-}
-</style>
-
-
+<body>
 # 🔥 HIGEさん物語
 
 ---
@@ -125,3 +87,6 @@
 
 ---
 -->
+
+</body>
+</html>
