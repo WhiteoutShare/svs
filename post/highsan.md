@@ -1,3 +1,24 @@
+## 🔍 先代スミスを探せ②
+
+<div style="display:flex; align-items:center; gap:20px; margin-bottom:30px;">
+
+<div style="flex:0 0 150px; text-align:center;">
+
+<img src="i/20261006.png"
+     style="width:250px; border-radius:12px;">
+
+</div>
+
+<div style="flex:1;">
+
+ここに②の内容を追加します。
+
+</div>
+
+---
+
+</div>
+
 ## 🔍 先代スミスを探せ①
 
 <div style="display:flex; align-items:center; gap:20px; margin-bottom:30px;">
@@ -19,25 +40,4 @@
 
 </div>
 
----
 
-## 🔍 先代スミスを探せ②
-
-<div style="display:flex; align-items:center; gap:20px; margin-bottom:30px;">
-
-<div style="flex:0 0 150px; text-align:center;">
-
-<img src="i/20261006.png"
-     style="width:250px; border-radius:12px;">
-
-</div>
-
-<div style="flex:1;">
-
-ここに②の内容を追加します。
-
-ここに文章を追加します。
-
-</div>
-
-</div>
