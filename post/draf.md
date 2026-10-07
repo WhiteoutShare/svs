@@ -6,7 +6,7 @@
 ## 評価
 
 <iframe 
-  src="./review.html" 
+  src="./highsanreview.html" 
   width="100%" 
   height="600" 
   frameborder="0">
