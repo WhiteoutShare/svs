@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ヒゲ物語、絶賛更新中！</title>
   <link rel="stylesheet" href="./css/highreview.css">
-  <script src="./js/highreview.js"></script>
+  <script type="module" src="./js/highreview.js"></script>
+
 </head>
 
   <body>
