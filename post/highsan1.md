@@ -3,10 +3,10 @@
   <script src="./js/backtotop.js"></script>
 </head>
 
-[ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
+## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 
 # 🔥 ヒゲ物語
-# ヒゲモノ エピソード1
+## ヒゲモノ エピソード1
 ## 📖 目次
 
 - [ここから始まるヒゲ物語](#ここから始まるヒゲ物語)
