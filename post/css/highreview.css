@@ -2,20 +2,23 @@
    基础设置
    ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   width: 100%;
-  max-width: 100%;
+  max-width: none !important;
+
   margin: 0;
   padding: 0;
 }
 
 body {
   width: 100%;
-  max-width: 100%;
+  max-width: none !important;
 
   margin: 0;
   padding: 30px;
@@ -37,10 +40,12 @@ body {
    ========================================================= */
 
 .container {
-  width: 100%;
-  max-width: none;
+  display: block;
 
-  margin: 0 auto;
+  width: 100% !important;
+  max-width: none !important;
+
+  margin: 0;
   padding: 30px;
 
   background: #ffffff;
@@ -59,8 +64,10 @@ body {
    ========================================================= */
 
 h2 {
-  width: 100%;
-  max-width: 100%;
+  display: block;
+
+  width: 100% !important;
+  max-width: none !important;
 
   margin: 0 0 20px 0;
   padding-bottom: 10px;
@@ -77,17 +84,18 @@ h2 {
 
 
 /* =========================================================
-   输入框
+   textarea
    ========================================================= */
 
 textarea {
   display: block;
 
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: none !important;
 
   min-height: 120px;
 
+  margin: 0;
   padding: 12px;
 
   font-family: inherit;
@@ -119,8 +127,10 @@ textarea:focus {
    ========================================================= */
 
 .button-area {
-  width: 100%;
-  max-width: 100%;
+  display: block;
+
+  width: 100% !important;
+  max-width: none !important;
 
   margin-top: 15px;
 
@@ -180,12 +190,13 @@ button:disabled {
 .table-wrapper {
   display: block;
 
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: none !important;
 
   margin-top: 30px;
+  padding: 0;
 
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 
@@ -196,15 +207,16 @@ button:disabled {
 .pagination {
   display: flex;
 
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: none !important;
 
   justify-content: center;
   align-items: center;
 
   gap: 8px;
 
-  margin-bottom: 10px;
+  margin: 0 0 10px 0;
+  padding: 0;
 
   flex-wrap: wrap;
 }
@@ -233,23 +245,40 @@ button:disabled {
    ========================================================= */
 
 table {
-  display: table;
+  display: table !important;
 
   width: 100% !important;
-  max-width: 100% !important;
+  max-width: none !important;
   min-width: 0 !important;
 
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 
   border-collapse: collapse;
   border-spacing: 0;
 
-  /*
-   * 非常重要：
-   * 固定布局后，第二列可以自动占用剩余空间
-   */
   table-layout: fixed !important;
+}
+
+
+/* =========================================================
+   Table Head / Body
+   ========================================================= */
+
+table thead,
+table tbody {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+
+/* =========================================================
+   Table Row
+   ========================================================= */
+
+table tr {
+  width: 100% !important;
+  max-width: none !important;
 }
 
 
@@ -307,7 +336,7 @@ table td {
 
 
 /* =========================================================
-   表格 Hover
+   Hover
    ========================================================= */
 
 table tr:hover td {
@@ -321,7 +350,7 @@ table tr:hover td {
 
 table th:first-child,
 table td:first-child {
-  width: 50px;
+  width: 50px !important;
 
   text-align: center;
 
@@ -335,17 +364,7 @@ table td:first-child {
 
 table th:nth-child(2),
 table td:nth-child(2) {
-  /*
-   * 不设置固定百分比。
-   *
-   * 自动占用：
-   * table 总宽度
-   * - No 列
-   * - 日期列
-   *
-   * 剩余的全部空间
-   */
-  width: auto;
+  width: auto !important;
 
   text-align: left;
 
@@ -362,7 +381,7 @@ table td:nth-child(2) {
 
 table th:nth-child(3),
 table td:nth-child(3) {
-  width: 180px;
+  width: 180px !important;
 
   text-align: center;
 
@@ -378,7 +397,7 @@ table td:nth-child(3) {
    ========================================================= */
 
 .center {
-  text-align: center;
+  text-align: center !important;
 }
 
 
@@ -402,44 +421,29 @@ table td:nth-child(3) {
 
 @media (max-width: 768px) {
 
-  /* -----------------------------------------
-     Body
-     ----------------------------------------- */
-
   body {
     padding: 15px;
   }
 
-
-  /* -----------------------------------------
-     Container
-     ----------------------------------------- */
-
   .container {
-    width: 100%;
+    width: 100% !important;
 
     padding: 20px;
 
     border-radius: 12px;
   }
 
-
-  /* -----------------------------------------
-     标题
-     ----------------------------------------- */
-
   h2 {
     font-size: 20px;
   }
 
 
-  /* -----------------------------------------
-     Table
-     ----------------------------------------- */
+  /* Table */
 
   table {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
+
     min-width: 0 !important;
 
     table-layout: fixed !important;
@@ -457,7 +461,7 @@ table td:nth-child(3) {
 
   table th:first-child,
   table td:first-child {
-    width: 45px;
+    width: 45px !important;
   }
 
 
@@ -465,7 +469,7 @@ table td:nth-child(3) {
 
   table th:nth-child(2),
   table td:nth-child(2) {
-    width: auto;
+    width: auto !important;
   }
 
 
@@ -473,18 +477,17 @@ table td:nth-child(3) {
 
   table th:nth-child(3),
   table td:nth-child(3) {
-    width: 120px;
+    width: 120px !important;
   }
 
 
-  /* -----------------------------------------
-     提示文字
-     ----------------------------------------- */
+  /* 提示文字 */
 
   .button-area > span:last-child {
     display: block;
 
     margin-top: 8px;
+
     margin-left: 0 !important;
   }
 }
@@ -497,31 +500,17 @@ table td:nth-child(3) {
 
 @media (max-width: 480px) {
 
-  /* -----------------------------------------
-     Body
-     ----------------------------------------- */
-
   body {
     padding: 8px;
   }
 
-
-  /* -----------------------------------------
-     Container
-     ----------------------------------------- */
-
   .container {
-    width: 100%;
+    width: 100% !important;
 
     padding: 15px;
 
     border-radius: 10px;
   }
-
-
-  /* -----------------------------------------
-     标题
-     ----------------------------------------- */
 
   h2 {
     margin-bottom: 15px;
@@ -532,12 +521,10 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Textarea
-     ----------------------------------------- */
+  /* Textarea */
 
   textarea {
-    width: 100%;
+    width: 100% !important;
 
     min-height: 110px;
 
@@ -547,9 +534,7 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Button Area
-     ----------------------------------------- */
+  /* Button Area */
 
   .button-area {
     margin-top: 12px;
@@ -558,9 +543,7 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Button
-     ----------------------------------------- */
+  /* Button */
 
   button {
     padding: 9px 18px;
@@ -569,9 +552,7 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Pagination
-     ----------------------------------------- */
+  /* Pagination */
 
   .pagination {
     gap: 5px;
@@ -594,13 +575,12 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Table
-     ----------------------------------------- */
+  /* Table */
 
   table {
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
+
     min-width: 0 !important;
 
     table-layout: fixed !important;
@@ -616,36 +596,31 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     No
-     ----------------------------------------- */
+  /* No */
 
   table th:first-child,
   table td:first-child {
-    width: 38px;
+    width: 38px !important;
   }
 
 
-  /* -----------------------------------------
-     Message
-     ----------------------------------------- */
+  /* Message */
 
   table th:nth-child(2),
   table td:nth-child(2) {
-    width: auto;
+    width: auto !important;
 
     word-break: break-all;
+
     overflow-wrap: anywhere;
   }
 
 
-  /* -----------------------------------------
-     Date
-     ----------------------------------------- */
+  /* Date */
 
   table th:nth-child(3),
   table td:nth-child(3) {
-    width: 95px;
+    width: 95px !important;
 
     white-space: normal;
 
@@ -653,9 +628,7 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     Loading
-     ----------------------------------------- */
+  /* Loading */
 
   .loading {
     padding: 15px 5px;
@@ -672,36 +645,20 @@ table td:nth-child(3) {
 
 @media (max-width: 360px) {
 
-  /* -----------------------------------------
-     Body
-     ----------------------------------------- */
-
   body {
     padding: 5px;
   }
 
-
-  /* -----------------------------------------
-     Container
-     ----------------------------------------- */
-
   .container {
     padding: 12px;
   }
-
-
-  /* -----------------------------------------
-     标题
-     ----------------------------------------- */
 
   h2 {
     font-size: 17px;
   }
 
 
-  /* -----------------------------------------
-     Table Cell
-     ----------------------------------------- */
+  /* Table Cell */
 
   table th,
   table td {
@@ -711,29 +668,23 @@ table td:nth-child(3) {
   }
 
 
-  /* -----------------------------------------
-     No
-     ----------------------------------------- */
+  /* No */
 
   table th:first-child,
   table td:first-child {
-    width: 32px;
+    width: 32px !important;
   }
 
 
-  /* -----------------------------------------
-     Date
-     ----------------------------------------- */
+  /* Date */
 
   table th:nth-child(3),
   table td:nth-child(3) {
-    width: 82px;
+    width: 82px !important;
   }
 
 
-  /* -----------------------------------------
-     Pagination
-     ----------------------------------------- */
+  /* Pagination */
 
   .pagination button {
     min-width: 58px;
