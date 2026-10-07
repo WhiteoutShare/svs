@@ -5,8 +5,20 @@
 
 ## 評価
 
-<iframe 
-  src="./highsanreview.html" 
-  width="100%" 
-  frameborder="0">
+<iframe
+  id="reviewFrame"
+  src="./highsanreview.html"
+  width="100%"
+  frameborder="0"
+  scrolling="no"
+  style="display:block; width:100%; border:none;">
 </iframe>
+
+<script>
+window.addEventListener("message", function(event) {
+  if (event.data.height) {
+    document.getElementById("reviewFrame").style.height =
+      event.data.height + "px";
+  }
+});
+</script>
