@@ -16,6 +16,7 @@ html {
 body {
   width: 100%;
   max-width: 100%;
+
   margin: 0;
   padding: 30px;
 
@@ -26,6 +27,7 @@ body {
     sans-serif;
 
   background: #f4f7fb;
+
   overflow-x: hidden;
 }
 
@@ -42,6 +44,7 @@ body {
   padding: 30px;
 
   background: #ffffff;
+
   border-radius: 16px;
 
   box-shadow:
@@ -57,23 +60,24 @@ body {
 
 h2 {
   width: 100%;
+  max-width: 100%;
 
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
 
   color: #1e3a8a;
 
   border-bottom: 3px solid #2563eb;
-  padding-bottom: 10px;
 
   line-height: 1.4;
 
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 
 /* =========================================================
-   textarea
+   输入框
    ========================================================= */
 
 textarea {
@@ -91,6 +95,7 @@ textarea {
   line-height: 1.6;
 
   color: #333;
+
   background: #ffffff;
 
   border: 1px solid #d1d5db;
@@ -115,22 +120,30 @@ textarea:focus {
 
 .button-area {
   width: 100%;
+  max-width: 100%;
 
   margin-top: 15px;
 
   line-height: 1.8;
 
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
+
+/* =========================================================
+   按钮
+   ========================================================= */
+
 button {
-  background: #2563eb;
+  padding: 10px 24px;
+
   color: #ffffff;
+
+  background: #2563eb;
 
   border: none;
   border-radius: 8px;
-
-  padding: 10px 24px;
 
   cursor: pointer;
 
@@ -153,7 +166,9 @@ button:active {
 
 button:disabled {
   background: #cccccc;
+
   cursor: not-allowed;
+
   transform: none;
 }
 
@@ -203,9 +218,9 @@ button:disabled {
 .page-info {
   min-width: 100px;
 
-  text-align: center;
-
   color: #555;
+
+  text-align: center;
 
   font-size: 14px;
 
@@ -214,7 +229,7 @@ button:disabled {
 
 
 /* =========================================================
-   表格
+   TABLE
    ========================================================= */
 
 table {
@@ -230,7 +245,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 
-  table-layout: fixed;
+  /*
+   * 非常重要：
+   * 固定布局后，第二列可以自动占用剩余空间
+   */
+  table-layout: fixed !important;
 }
 
 
@@ -238,15 +257,22 @@ table {
    表头
    ========================================================= */
 
-th {
-  background: #2563eb;
+table th {
+  padding: 12px;
+
   color: #ffffff;
 
-  padding: 12px;
+  background: #2563eb;
 
   text-align: center;
 
+  font-family: inherit;
+  font-size: 14px;
   font-weight: bold;
+
+  line-height: 1.5;
+
+  white-space: normal;
 
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -257,28 +283,44 @@ th {
    表格内容
    ========================================================= */
 
-td {
+table td {
   padding: 12px;
+
+  color: #333;
+
+  background: #ffffff;
 
   border-bottom: 1px solid #e5e7eb;
 
   vertical-align: top;
 
+  font-family: inherit;
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  white-space: normal;
+
   word-break: break-word;
   overflow-wrap: anywhere;
 }
 
-tr:hover {
+
+/* =========================================================
+   表格 Hover
+   ========================================================= */
+
+table tr:hover td {
   background-color: #f8fafc;
 }
 
 
 /* =========================================================
-   No 列
+   第一列：No
    ========================================================= */
 
-th:first-child,
-td:first-child {
+table th:first-child,
+table td:first-child {
   width: 50px;
 
   text-align: center;
@@ -288,13 +330,26 @@ td:first-child {
 
 
 /* =========================================================
-   消息内容列
+   第二列：メッセージ内容
    ========================================================= */
 
-.msg-col {
+table th:nth-child(2),
+table td:nth-child(2) {
+  /*
+   * 不设置固定百分比。
+   *
+   * 自动占用：
+   * table 总宽度
+   * - No 列
+   * - 日期列
+   *
+   * 剩余的全部空间
+   */
   width: auto;
 
   text-align: left;
+
+  white-space: normal;
 
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -302,10 +357,11 @@ td:first-child {
 
 
 /* =========================================================
-   日期列
+   第三列：投稿日時
    ========================================================= */
 
-.date-col {
+table th:nth-child(3),
+table td:nth-child(3) {
   width: 180px;
 
   text-align: center;
@@ -331,11 +387,11 @@ td:first-child {
    ========================================================= */
 
 .loading {
-  text-align: center;
+  padding: 20px;
 
   color: #666;
 
-  padding: 20px;
+  text-align: center;
 }
 
 
@@ -345,9 +401,19 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 768px) {
+
+  /* -----------------------------------------
+     Body
+     ----------------------------------------- */
+
   body {
     padding: 15px;
   }
+
+
+  /* -----------------------------------------
+     Container
+     ----------------------------------------- */
 
   .container {
     width: 100%;
@@ -357,13 +423,18 @@ td:first-child {
     border-radius: 12px;
   }
 
+
+  /* -----------------------------------------
+     标题
+     ----------------------------------------- */
+
   h2 {
     font-size: 20px;
   }
 
 
   /* -----------------------------------------
-     表格
+     Table
      ----------------------------------------- */
 
   table {
@@ -371,36 +442,38 @@ td:first-child {
     max-width: 100% !important;
     min-width: 0 !important;
 
-    table-layout: fixed;
+    table-layout: fixed !important;
   }
 
-  th,
-  td {
+  table th,
+  table td {
     padding: 10px 8px;
 
     font-size: 14px;
   }
 
 
-  /* No 列 */
+  /* No */
 
-  th:first-child,
-  td:first-child {
+  table th:first-child,
+  table td:first-child {
     width: 45px;
   }
 
 
-  /* 日期列 */
+  /* Message */
 
-  .date-col {
-    width: 120px;
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    width: auto;
   }
 
 
-  /* 消息列 */
+  /* Date */
 
-  .msg-col {
-    width: auto;
+  table th:nth-child(3),
+  table td:nth-child(3) {
+    width: 120px;
   }
 
 
@@ -411,8 +484,8 @@ td:first-child {
   .button-area > span:last-child {
     display: block;
 
-    margin-left: 0 !important;
     margin-top: 8px;
+    margin-left: 0 !important;
   }
 }
 
@@ -423,9 +496,19 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 480px) {
+
+  /* -----------------------------------------
+     Body
+     ----------------------------------------- */
+
   body {
     padding: 8px;
   }
+
+
+  /* -----------------------------------------
+     Container
+     ----------------------------------------- */
 
   .container {
     width: 100%;
@@ -435,17 +518,22 @@ td:first-child {
     border-radius: 10px;
   }
 
+
+  /* -----------------------------------------
+     标题
+     ----------------------------------------- */
+
   h2 {
-    font-size: 18px;
+    margin-bottom: 15px;
 
     padding-bottom: 8px;
 
-    margin-bottom: 15px;
+    font-size: 18px;
   }
 
 
   /* -----------------------------------------
-     输入框
+     Textarea
      ----------------------------------------- */
 
   textarea {
@@ -460,7 +548,7 @@ td:first-child {
 
 
   /* -----------------------------------------
-     按钮区域
+     Button Area
      ----------------------------------------- */
 
   .button-area {
@@ -468,6 +556,11 @@ td:first-child {
 
     font-size: 13px;
   }
+
+
+  /* -----------------------------------------
+     Button
+     ----------------------------------------- */
 
   button {
     padding: 9px 18px;
@@ -477,7 +570,7 @@ td:first-child {
 
 
   /* -----------------------------------------
-     分页
+     Pagination
      ----------------------------------------- */
 
   .pagination {
@@ -502,7 +595,7 @@ td:first-child {
 
 
   /* -----------------------------------------
-     表格
+     Table
      ----------------------------------------- */
 
   table {
@@ -510,11 +603,11 @@ td:first-child {
     max-width: 100% !important;
     min-width: 0 !important;
 
-    table-layout: fixed;
+    table-layout: fixed !important;
   }
 
-  th,
-  td {
+  table th,
+  table td {
     padding: 8px 5px;
 
     font-size: 13px;
@@ -523,32 +616,22 @@ td:first-child {
   }
 
 
-  /* No */
+  /* -----------------------------------------
+     No
+     ----------------------------------------- */
 
-  th:first-child,
-  td:first-child {
+  table th:first-child,
+  table td:first-child {
     width: 38px;
-
-    text-align: center;
   }
 
 
-  /* 投稿日時 */
+  /* -----------------------------------------
+     Message
+     ----------------------------------------- */
 
-  .date-col {
-    width: 95px;
-
-    text-align: center;
-
-    white-space: normal;
-
-    word-break: break-word;
-  }
-
-
-  /* メッセージ */
-
-  .msg-col {
+  table th:nth-child(2),
+  table td:nth-child(2) {
     width: auto;
 
     word-break: break-all;
@@ -556,7 +639,23 @@ td:first-child {
   }
 
 
-  /* Loading */
+  /* -----------------------------------------
+     Date
+     ----------------------------------------- */
+
+  table th:nth-child(3),
+  table td:nth-child(3) {
+    width: 95px;
+
+    white-space: normal;
+
+    word-break: break-word;
+  }
+
+
+  /* -----------------------------------------
+     Loading
+     ----------------------------------------- */
 
   .loading {
     padding: 15px 5px;
@@ -572,42 +671,69 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 360px) {
+
+  /* -----------------------------------------
+     Body
+     ----------------------------------------- */
+
   body {
     padding: 5px;
   }
+
+
+  /* -----------------------------------------
+     Container
+     ----------------------------------------- */
 
   .container {
     padding: 12px;
   }
 
+
+  /* -----------------------------------------
+     标题
+     ----------------------------------------- */
+
   h2 {
     font-size: 17px;
   }
 
-  th,
-  td {
+
+  /* -----------------------------------------
+     Table Cell
+     ----------------------------------------- */
+
+  table th,
+  table td {
     padding: 6px 4px;
 
     font-size: 12px;
   }
 
 
-  /* No 列进一步缩小 */
+  /* -----------------------------------------
+     No
+     ----------------------------------------- */
 
-  th:first-child,
-  td:first-child {
+  table th:first-child,
+  table td:first-child {
     width: 32px;
   }
 
 
-  /* 日期列进一步缩小 */
+  /* -----------------------------------------
+     Date
+     ----------------------------------------- */
 
-  .date-col {
+  table th:nth-child(3),
+  table td:nth-child(3) {
     width: 82px;
   }
 
 
-  /* 分页按钮 */
+  /* -----------------------------------------
+     Pagination
+     ----------------------------------------- */
 
   .pagination button {
     min-width: 58px;
