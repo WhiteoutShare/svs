@@ -36,6 +36,7 @@ body {
 
 .container {
   width: 100%;
+  max-width: none;
 
   margin: 0 auto;
   padding: 30px;
@@ -162,15 +163,14 @@ button:disabled {
    ========================================================= */
 
 .table-wrapper {
+  display: block;
+
   width: 100%;
   max-width: 100%;
 
   margin-top: 30px;
 
-  /*
-   * 不允许表格把整个页面撑宽
-   */
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 
@@ -179,9 +179,10 @@ button:disabled {
    ========================================================= */
 
 .pagination {
-  width: 100%;
-
   display: flex;
+
+  width: 100%;
+  max-width: 100%;
 
   justify-content: center;
   align-items: center;
@@ -190,9 +191,6 @@ button:disabled {
 
   margin-bottom: 10px;
 
-  /*
-   * 屏幕太窄时允许换行
-   */
   flex-wrap: wrap;
 }
 
@@ -220,22 +218,18 @@ button:disabled {
    ========================================================= */
 
 table {
-  width: 100%;
-  max-width: 100%;
+  display: table;
 
-  /*
-   * 非常重要：
-   * 不设置 min-width
-   * 防止手机屏幕被表格撑宽
-   */
-  min-width: 0;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+
+  margin: 0;
+  padding: 0;
 
   border-collapse: collapse;
+  border-spacing: 0;
 
-  /*
-   * 固定布局：
-   * 表格会严格按照当前屏幕宽度重新分配列宽
-   */
   table-layout: fixed;
 }
 
@@ -254,9 +248,6 @@ th {
 
   font-weight: bold;
 
-  /*
-   * 防止标题把列撑宽
-   */
   word-break: break-word;
   overflow-wrap: anywhere;
 }
@@ -273,9 +264,6 @@ td {
 
   vertical-align: top;
 
-  /*
-   * 长文字自动换行
-   */
   word-break: break-word;
   overflow-wrap: anywhere;
 }
@@ -308,9 +296,6 @@ td:first-child {
 
   text-align: left;
 
-  /*
-   * 防止超长文字、URL 等撑开表格
-   */
   word-break: break-word;
   overflow-wrap: anywhere;
 }
@@ -325,9 +310,6 @@ td:first-child {
 
   text-align: center;
 
-  /*
-   * 允许手机上换行
-   */
   white-space: normal;
 
   word-break: break-word;
@@ -363,7 +345,6 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 768px) {
-
   body {
     padding: 15px;
   }
@@ -380,12 +361,17 @@ td:first-child {
     font-size: 20px;
   }
 
-  /*
-   * 表格整体继续跟随屏幕缩放
-   */
+
+  /* -----------------------------------------
+     表格
+     ----------------------------------------- */
+
   table {
-    width: 100%;
-    min-width: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+
+    table-layout: fixed;
   }
 
   th,
@@ -395,34 +381,33 @@ td:first-child {
     font-size: 14px;
   }
 
-  /*
-   * No 列缩小
-   */
+
+  /* No 列 */
+
   th:first-child,
   td:first-child {
     width: 45px;
   }
 
-  /*
-   * 日期列缩小
-   */
+
+  /* 日期列 */
+
   .date-col {
     width: 120px;
   }
 
-  /*
-   * 消息列占剩余空间
-   */
+
+  /* 消息列 */
+
   .msg-col {
     width: auto;
   }
 
-  /*
-   * 提示文字单独一行
-   *
-   * 你的 HTML 目前用了 inline style，
-   * 所以这里用 !important 覆盖 margin-left。
-   */
+
+  /* -----------------------------------------
+     提示文字
+     ----------------------------------------- */
+
   .button-area > span:last-child {
     display: block;
 
@@ -438,7 +423,6 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 480px) {
-
   body {
     padding: 8px;
   }
@@ -522,9 +506,9 @@ td:first-child {
      ----------------------------------------- */
 
   table {
-    width: 100%;
-
-    min-width: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
 
     table-layout: fixed;
   }
@@ -568,7 +552,6 @@ td:first-child {
     width: auto;
 
     word-break: break-all;
-
     overflow-wrap: anywhere;
   }
 
@@ -589,7 +572,6 @@ td:first-child {
    ========================================================= */
 
 @media (max-width: 360px) {
-
   body {
     padding: 5px;
   }
@@ -609,24 +591,24 @@ td:first-child {
     font-size: 12px;
   }
 
-  /*
-   * No 列进一步缩小
-   */
+
+  /* No 列进一步缩小 */
+
   th:first-child,
   td:first-child {
     width: 32px;
   }
 
-  /*
-   * 日期列进一步缩小
-   */
+
+  /* 日期列进一步缩小 */
+
   .date-col {
     width: 82px;
   }
 
-  /*
-   * 分页按钮
-   */
+
+  /* 分页按钮 */
+
   .pagination button {
     min-width: 58px;
 
