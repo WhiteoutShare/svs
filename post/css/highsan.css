@@ -47,6 +47,7 @@
 }
 
 #backToTop {
+  padding: 0px !important;
   position: fixed;
   right: 20px;
   bottom: 20px;
