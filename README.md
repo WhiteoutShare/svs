@@ -16,6 +16,8 @@
 
 -->
 
+# [ヒゲ物語、絶賛更新中！](https://whiteoutshare.github.io/svs/post/highsan)
+
 # 🏰 前回例：[SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/svs/svs260912)  
 
 # 👑 最強王国準備フェーズ 👑
