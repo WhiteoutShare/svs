@@ -221,4 +221,5 @@
 </div>
 
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
+## [感想評価](https://whiteoutshare.github.io/svs/post/highsan#感想評価)
 <button id="backToTop" title="ページ上部へ">↑</button>
