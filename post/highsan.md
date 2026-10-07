@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="./css/highsan.css">
+  <script src="./js/backtotop.js"></script>
 </head>
 
 # 🔥 ヒゲ物語、絶賛更新中！
@@ -18,3 +19,5 @@
 
 #  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 #  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
+
+<button id="backToTop" title="ページ上部へ">↑</button>
