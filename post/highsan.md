@@ -20,9 +20,7 @@
 ##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
 ##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 
-
-# 感想,評価
-
+## 感想,評価
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -71,7 +69,7 @@
         </table>
       </div>
     </div>
-      <script type="module" src="./js/highreview.js"></script>
-  </body>
+    <script type="module" src="./js/highreview.js"></script>
+</body>
 
 <button id="backToTop" title="ページ上部へ">↑</button>
