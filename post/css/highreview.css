@@ -1,0 +1,146 @@
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #1e3a8a;
+        border-bottom: 3px solid #2563eb;
+        padding-bottom: 10px;
+      }
+
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        resize: vertical;
+      }
+
+      textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+      }
+
+      .button-area {
+        margin-top: 15px;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      button:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .table-wrapper {
+        margin-top: 30px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: #2563eb;
+        color: white;
+        padding: 12px;
+        text-align: center;
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      tr:hover {
+        background-color: #f8fafc;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .date-col {
+        width: 180px;
+        white-space: nowrap;
+      }
+
+      .msg-col {
+        word-break: break-word;
+      }
+
+      .loading {
+        text-align: center;
+        color: #666;
+        padding: 20px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .pagination button {
+        min-width: 80px;
+        padding: 8px 16px;
+      }
+
+      .page-info {
+        min-width: 100px;
+        text-align: center;
+        color: #555;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        .date-col {
+          width: 90px;
+        }
+      }
