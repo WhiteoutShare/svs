@@ -102,6 +102,17 @@
 </div>
 </div>
 
+## 先代スミスを探せ②
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006.png" alt="先代スミスを探せ②">
+</div>
+<div class="blog-content">
+そこにいた話せそうなサボテン🌵にも確認したが、返ってくる返事は「ジョーーーイ」のみ。先代スミスを見つけるにはまだまだ時間がかかりそうだ。
+<br><br>
+次回「先代スミスを探せ③」
+</div>
+</div>
 
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 <button id="backToTop" title="ページ上部へ">↑</button>
