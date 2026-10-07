@@ -1,7 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
-      import {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+import {
         getFirestore,
         collection,
         addDoc,
@@ -10,8 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         orderBy,
         limit,
         startAfter,
-      } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+} from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
+document.addEventListener("DOMContentLoaded", () => {
       const firebaseConfig = {
         apiKey: "AIzaSyD2rzzurBFr8lRThlam8_UyJ4jjTy03Nvk",
         authDomain: "whiteout-svs-highsan.firebaseapp.com",
