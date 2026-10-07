@@ -74,12 +74,24 @@
 ## 一難去ってまた一難
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006-06.png" alt="一難去ってまた一難">
+<img src="i/20261007-06.png" alt="一難去ってまた一難">
 </div>
 <div class="blog-content">
 現代に帰る予定が、途中でデロリアンから異音、、、！不時着したのは何と100前の世界。そして大破したデロリアン。どうする！！ひげ親子！
 <br><br>
 次回「先代スミスをさがせ①」
+</div>
+</div>
+
+## 先代スミスを探せ①
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/20261006.png" alt="先代スミスを探せ①">
+</div>
+<div class="blog-content">
+デロリアンの開発者である先代スミスを探す親子、似顔絵をもとに聞き込み開始。ディカプリオに尋ねるものの居場所は掴めず、、果たして見つけることができるのか、、
+<br><br>
+次回「先代スミスを探せ②」
 </div>
 </div>
 
