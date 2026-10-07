@@ -4,6 +4,7 @@
 </head>
 
 # 🔥 ヒゲ物語、絶賛更新中！
+## [感想,評価](https://whiteoutshare.github.io/svs/post/highsanreview)
 
 ## 先代スミスを探せ②
 <div class="blog-item">
@@ -19,5 +20,8 @@
 
 #  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 #  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
+
+## [感想,評価](https://whiteoutshare.github.io/svs/post/highsanreview)
+
 
 <button id="backToTop" title="ページ上部へ">↑</button>
