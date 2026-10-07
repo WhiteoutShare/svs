@@ -1,9 +1,12 @@
+/* =========================================================
+   基础设置
+   ========================================================= */
+
 * {
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -11,186 +14,366 @@ body {
 }
 
 body {
-  font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
-  background: #f4f7fb;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
   padding: 30px;
+
+  font-family:
+    "Yu Gothic",
+    "Hiragino Sans",
+    "Meiryo",
+    sans-serif;
+
+  background: #f4f7fb;
+  overflow-x: hidden;
 }
 
-/* =========================
+
+/* =========================================================
    主容器
-   ========================= */
+   ========================================================= */
 
 .container {
   width: 100%;
   max-width: 1100px;
+
   margin: 0 auto;
-  background: #fff;
-  border-radius: 16px;
   padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  background: #ffffff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.08);
+
+  overflow: hidden;
 }
 
-/* =========================
+
+/* =========================================================
    标题
-   ========================= */
+   ========================================================= */
 
 h2 {
+  width: 100%;
+
   margin-top: 0;
+  margin-bottom: 20px;
+
   color: #1e3a8a;
+
   border-bottom: 3px solid #2563eb;
   padding-bottom: 10px;
+
   line-height: 1.4;
+
+  word-break: break-word;
 }
 
-/* =========================
-   输入框
-   ========================= */
+
+/* =========================================================
+   textarea
+   ========================================================= */
 
 textarea {
   display: block;
+
   width: 100%;
   max-width: 100%;
+
   min-height: 120px;
+
   padding: 12px;
-  font-size: 14px;
+
   font-family: inherit;
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: #333;
+  background: #ffffff;
+
   border: 1px solid #d1d5db;
   border-radius: 8px;
+
   resize: vertical;
 }
 
 textarea:focus {
   outline: none;
+
   border-color: #2563eb;
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+
+  box-shadow:
+    0 0 5px rgba(37, 99, 235, 0.3);
 }
 
-/* =========================
+
+/* =========================================================
    按钮区域
-   ========================= */
+   ========================================================= */
 
 .button-area {
+  width: 100%;
+
   margin-top: 15px;
+
   line-height: 1.8;
+
+  word-break: break-word;
 }
 
 button {
   background: #2563eb;
-  color: white;
+  color: #ffffff;
+
   border: none;
-  padding: 10px 24px;
   border-radius: 8px;
+
+  padding: 10px 24px;
+
   cursor: pointer;
+
+  font-family: inherit;
   font-size: 14px;
   font-weight: bold;
-  transition: 0.2s;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
 }
 
 button:hover {
   background: #1d4ed8;
 }
 
+button:active {
+  transform: scale(0.98);
+}
+
 button:disabled {
   background: #cccccc;
   cursor: not-allowed;
+  transform: none;
 }
 
-/* =========================
-   表格
-   ========================= */
+
+/* =========================================================
+   表格外层
+   ========================================================= */
 
 .table-wrapper {
   width: 100%;
   max-width: 100%;
+
   margin-top: 30px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+
+  /*
+   * 不允许表格把整个页面撑宽
+   */
+  overflow-x: hidden;
 }
 
-table {
+
+/* =========================================================
+   分页
+   ========================================================= */
+
+.pagination {
   width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 10px;
+
+  /*
+   * 屏幕太窄时允许换行
+   */
+  flex-wrap: wrap;
 }
 
-th {
-  background: #2563eb;
-  color: white;
-  padding: 12px;
+.pagination button {
+  min-width: 80px;
+
+  padding: 8px 16px;
+}
+
+.page-info {
+  min-width: 100px;
+
   text-align: center;
+
+  color: #555;
+
+  font-size: 14px;
+
   white-space: nowrap;
 }
 
+
+/* =========================================================
+   表格
+   ========================================================= */
+
+table {
+  width: 100%;
+  max-width: 100%;
+
+  /*
+   * 非常重要：
+   * 不设置 min-width
+   * 防止手机屏幕被表格撑宽
+   */
+  min-width: 0;
+
+  border-collapse: collapse;
+
+  /*
+   * 固定布局：
+   * 表格会严格按照当前屏幕宽度重新分配列宽
+   */
+  table-layout: fixed;
+}
+
+
+/* =========================================================
+   表头
+   ========================================================= */
+
+th {
+  background: #2563eb;
+  color: #ffffff;
+
+  padding: 12px;
+
+  text-align: center;
+
+  font-weight: bold;
+
+  /*
+   * 防止标题把列撑宽
+   */
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   表格内容
+   ========================================================= */
+
 td {
   padding: 12px;
+
   border-bottom: 1px solid #e5e7eb;
+
+  vertical-align: top;
+
+  /*
+   * 长文字自动换行
+   */
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 tr:hover {
   background-color: #f8fafc;
 }
 
-.center {
-  text-align: center;
-}
 
-.date-col {
-  width: 180px;
+/* =========================================================
+   No 列
+   ========================================================= */
+
+th:first-child,
+td:first-child {
+  width: 50px;
+
+  text-align: center;
+
   white-space: nowrap;
 }
 
+
+/* =========================================================
+   消息内容列
+   ========================================================= */
+
 .msg-col {
+  width: auto;
+
+  text-align: left;
+
+  /*
+   * 防止超长文字、URL 等撑开表格
+   */
   word-break: break-word;
   overflow-wrap: anywhere;
 }
 
-/* =========================
+
+/* =========================================================
+   日期列
+   ========================================================= */
+
+.date-col {
+  width: 180px;
+
+  text-align: center;
+
+  /*
+   * 允许手机上换行
+   */
+  white-space: normal;
+
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   通用
+   ========================================================= */
+
+.center {
+  text-align: center;
+}
+
+
+/* =========================================================
    Loading
-   ========================= */
+   ========================================================= */
 
 .loading {
   text-align: center;
+
   color: #666;
+
   padding: 20px;
 }
 
-/* =========================
-   分页
-   ========================= */
 
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.pagination button {
-  min-width: 80px;
-  padding: 8px 16px;
-}
-
-.page-info {
-  min-width: 100px;
-  text-align: center;
-  color: #555;
-  font-size: 14px;
-}
-
-/* =========================
+/* =========================================================
    平板
-   ========================= */
+   768px 以下
+   ========================================================= */
 
 @media (max-width: 768px) {
+
   body {
     padding: 15px;
   }
 
   .container {
     width: 100%;
+
     padding: 20px;
+
     border-radius: 12px;
   }
 
@@ -199,75 +382,263 @@ tr:hover {
   }
 
   /*
-   * 这里不要让表格强行压缩。
-   * 屏幕太窄时允许横向滚动。
+   * 表格整体继续跟随屏幕缩放
    */
-  .table-wrapper {
-    overflow-x: auto;
-  }
-
   table {
-    min-width: 600px;
+    width: 100%;
+    min-width: 0;
   }
 
+  th,
+  td {
+    padding: 10px 8px;
+
+    font-size: 14px;
+  }
+
+  /*
+   * No 列缩小
+   */
+  th:first-child,
+  td:first-child {
+    width: 45px;
+  }
+
+  /*
+   * 日期列缩小
+   */
   .date-col {
     width: 120px;
   }
 
   /*
-   * 提示文字在手机上自动换行
+   * 消息列占剩余空间
+   */
+  .msg-col {
+    width: auto;
+  }
+
+  /*
+   * 提示文字单独一行
+   *
+   * 你的 HTML 目前用了 inline style，
+   * 所以这里用 !important 覆盖 margin-left。
    */
   .button-area > span:last-child {
     display: block;
+
     margin-left: 0 !important;
     margin-top: 8px;
   }
 }
 
-/* =========================
+
+/* =========================================================
    手机
-   ========================= */
+   480px 以下
+   ========================================================= */
 
 @media (max-width: 480px) {
+
   body {
     padding: 8px;
   }
 
   .container {
+    width: 100%;
+
     padding: 15px;
+
     border-radius: 10px;
   }
 
   h2 {
     font-size: 18px;
+
     padding-bottom: 8px;
+
+    margin-bottom: 15px;
   }
 
+
+  /* -----------------------------------------
+     输入框
+     ----------------------------------------- */
+
   textarea {
+    width: 100%;
+
     min-height: 110px;
+
+    padding: 10px;
+
     font-size: 14px;
   }
 
+
+  /* -----------------------------------------
+     按钮区域
+     ----------------------------------------- */
+
   .button-area {
     margin-top: 12px;
+
+    font-size: 13px;
   }
 
   button {
     padding: 9px 18px;
+
+    font-size: 13px;
   }
+
+
+  /* -----------------------------------------
+     分页
+     ----------------------------------------- */
 
   .pagination {
     gap: 5px;
+
+    margin-bottom: 8px;
   }
 
   .pagination button {
-    min-width: 70px;
+    min-width: 65px;
+
     padding: 7px 10px;
-    font-size: 13px;
+
+    font-size: 12px;
   }
 
   .page-info {
-    min-width: 70px;
+    min-width: 60px;
+
+    font-size: 12px;
+  }
+
+
+  /* -----------------------------------------
+     表格
+     ----------------------------------------- */
+
+  table {
+    width: 100%;
+
+    min-width: 0;
+
+    table-layout: fixed;
+  }
+
+  th,
+  td {
+    padding: 8px 5px;
+
     font-size: 13px;
+
+    line-height: 1.5;
+  }
+
+
+  /* No */
+
+  th:first-child,
+  td:first-child {
+    width: 38px;
+
+    text-align: center;
+  }
+
+
+  /* 投稿日時 */
+
+  .date-col {
+    width: 95px;
+
+    text-align: center;
+
+    white-space: normal;
+
+    word-break: break-word;
+  }
+
+
+  /* メッセージ */
+
+  .msg-col {
+    width: auto;
+
+    word-break: break-all;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* Loading */
+
+  .loading {
+    padding: 15px 5px;
+
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   超小型手机
+   360px 以下
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  body {
+    padding: 5px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  h2 {
+    font-size: 17px;
+  }
+
+  th,
+  td {
+    padding: 6px 4px;
+
+    font-size: 12px;
+  }
+
+  /*
+   * No 列进一步缩小
+   */
+  th:first-child,
+  td:first-child {
+    width: 32px;
+  }
+
+  /*
+   * 日期列进一步缩小
+   */
+  .date-col {
+    width: 82px;
+  }
+
+  /*
+   * 分页按钮
+   */
+  .pagination button {
+    min-width: 58px;
+
+    padding: 6px 7px;
+
+    font-size: 11px;
+  }
+
+  .page-info {
+    min-width: 55px;
+
+    font-size: 11px;
   }
 }
