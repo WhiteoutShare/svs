@@ -106,7 +106,7 @@
 ## 先代スミスを探せ②
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/20261006.png" alt="先代スミスを探せ②">
+<img src="i/20261007-07.jpg" alt="先代スミスを探せ②">
 </div>
 <div class="blog-content">
 そこにいた話せそうなサボテン🌵にも確認したが、返ってくる返事は「ジョーーーイ」のみ。先代スミスを見つけるにはまだまだ時間がかかりそうだ。
