@@ -17,8 +17,8 @@
 </div>
 </div>
 
-#  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
-#  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
+##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
+##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 
 # 感想,評価
 <head>
