@@ -1,273 +1,146 @@
-* {
-  box-sizing: border-box;
-}
+      * {
+        box-sizing: border-box;
+      }
 
-html,
-body {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-}
+      body {
+        font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 30px;
+      }
 
-body {
-  font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
-  background: #f4f7fb;
-  padding: 30px;
-}
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
 
-/* =========================
-   主容器
-   ========================= */
+      h2 {
+        margin-top: 0;
+        color: #1e3a8a;
+        border-bottom: 3px solid #2563eb;
+        padding-bottom: 10px;
+      }
 
-.container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 16px;
-  padding: 30px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
+      textarea {
+        width: 100%;
+        min-height: 120px;
+        padding: 12px;
+        font-size: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        resize: vertical;
+      }
 
-/* =========================
-   标题
-   ========================= */
+      textarea:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+      }
 
-h2 {
-  margin-top: 0;
-  color: #1e3a8a;
-  border-bottom: 3px solid #2563eb;
-  padding-bottom: 10px;
-  line-height: 1.4;
-}
+      .button-area {
+        margin-top: 15px;
+      }
 
-/* =========================
-   输入框
-   ========================= */
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
 
-textarea {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  min-height: 120px;
-  padding: 12px;
-  font-size: 14px;
-  font-family: inherit;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  resize: vertical;
-}
+      button:hover {
+        background: #1d4ed8;
+      }
 
-textarea:focus {
-  outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
-}
+      button:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
 
-/* =========================
-   按钮区域
-   ========================= */
+      .table-wrapper {
+        margin-top: 30px;
+        overflow-x: auto;
+      }
 
-.button-area {
-  margin-top: 15px;
-  line-height: 1.8;
-}
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
 
-button {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  transition: 0.2s;
-}
+      th {
+        background: #2563eb;
+        color: white;
+        padding: 12px;
+        text-align: center;
+      }
 
-button:hover {
-  background: #1d4ed8;
-}
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+      }
 
-button:disabled {
-  background: #cccccc;
-  cursor: not-allowed;
-}
+      tr:hover {
+        background-color: #f8fafc;
+      }
 
-/* =========================
-   表格
-   ========================= */
+      .center {
+        text-align: center;
+      }
 
-.table-wrapper {
-  width: 100%;
-  max-width: 100%;
-  margin-top: 30px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
+      .date-col {
+        width: 180px;
+        white-space: nowrap;
+      }
 
-table {
-  width: 100%;
-  min-width: 600px;
-  border-collapse: collapse;
-}
+      .msg-col {
+        word-break: break-word;
+      }
 
-th {
-  background: #2563eb;
-  color: white;
-  padding: 12px;
-  text-align: center;
-  white-space: nowrap;
-}
+      .loading {
+        text-align: center;
+        color: #666;
+        padding: 20px;
+      }
 
-td {
-  padding: 12px;
-  border-bottom: 1px solid #e5e7eb;
-}
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
 
-tr:hover {
-  background-color: #f8fafc;
-}
+      .pagination button {
+        min-width: 80px;
+        padding: 8px 16px;
+      }
 
-.center {
-  text-align: center;
-}
+      .page-info {
+        min-width: 100px;
+        text-align: center;
+        color: #555;
+        font-size: 14px;
+      }
 
-.date-col {
-  width: 180px;
-  white-space: nowrap;
-}
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
 
-.msg-col {
-  word-break: break-word;
-  overflow-wrap: anywhere;
-}
+        .container {
+          padding: 20px;
+        }
 
-/* =========================
-   Loading
-   ========================= */
-
-.loading {
-  text-align: center;
-  color: #666;
-  padding: 20px;
-}
-
-/* =========================
-   分页
-   ========================= */
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  flex-wrap: wrap;
-}
-
-.pagination button {
-  min-width: 80px;
-  padding: 8px 16px;
-}
-
-.page-info {
-  min-width: 100px;
-  text-align: center;
-  color: #555;
-  font-size: 14px;
-}
-
-/* =========================
-   平板
-   ========================= */
-
-@media (max-width: 768px) {
-  body {
-    padding: 15px;
-  }
-
-  .container {
-    width: 100%;
-    padding: 20px;
-    border-radius: 12px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  /*
-   * 这里不要让表格强行压缩。
-   * 屏幕太窄时允许横向滚动。
-   */
-  .table-wrapper {
-    overflow-x: auto;
-  }
-
-  table {
-    min-width: 600px;
-  }
-
-  .date-col {
-    width: 120px;
-  }
-
-  /*
-   * 提示文字在手机上自动换行
-   */
-  .button-area > span:last-child {
-    display: block;
-    margin-left: 0 !important;
-    margin-top: 8px;
-  }
-}
-
-/* =========================
-   手机
-   ========================= */
-
-@media (max-width: 480px) {
-  body {
-    padding: 8px;
-  }
-
-  .container {
-    padding: 15px;
-    border-radius: 10px;
-  }
-
-  h2 {
-    font-size: 18px;
-    padding-bottom: 8px;
-  }
-
-  textarea {
-    min-height: 110px;
-    font-size: 14px;
-  }
-
-  .button-area {
-    margin-top: 12px;
-  }
-
-  button {
-    padding: 9px 18px;
-  }
-
-  .pagination {
-    gap: 5px;
-  }
-
-  .pagination button {
-    min-width: 70px;
-    padding: 7px 10px;
-    font-size: 13px;
-  }
-
-  .page-info {
-    min-width: 70px;
-    font-size: 13px;
-  }
-}
+        .date-col {
+          width: 90px;
+        }
+      }
