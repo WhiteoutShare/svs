@@ -15,8 +15,6 @@
 
   <body>
     <div class="container">
-      <a href="https://whiteoutshare.github.io/svs/post/highsan" style="font-weight: bold;">ホームページへ戻る</a>
-      <br />
       <h2>📋 ヒゲ物語、絶賛更新中！</h2>
 
       <textarea
@@ -38,10 +36,6 @@
         <span style="margin-left: 20px; color: #000; font-size: 14px; font-weight: bold;"> 
           ※無料サービスを利用しているため、当日に連続して投稿に失敗した場合は、翌日に改めて投稿をお試しください。
         </span>
-      </div>
-      <div>
-       <a href="https://whiteoutshare.github.io/svs/post/highsan" style="font-weight: bold;">ホームページへ戻る</a>
-       <br />
       </div>
       <div class="table-wrapper">
         <div class="pagination">
