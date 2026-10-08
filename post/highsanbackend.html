@@ -303,23 +303,16 @@
           sendBtn.disabled = true;
 
           const imageFile = document.getElementById("imageFile").files[0];
-
           let imageUrl = "";
-
           if (imageFile) {
             if (imageFile.size > 5 * 1024 * 1024) {
               alert("画像は5MB以下にしてください");
-
               sendBtn.disabled = false;
-
               return;
             }
-
             sendBtn.textContent = "Uploading...";
-
             imageUrl = await uploadToCloudinary(imageFile);
           }
-
           sendBtn.textContent = "送信";
 
           await addDoc(collection(db, "feedback"), {
@@ -496,26 +489,19 @@
           const msgTd = document.createElement("td");
 
           msgTd.className = "msg-col";
-
           msgTd.textContent = data.message ?? "";
-
           const imageTd = document.createElement("td");
-
           imageTd.className = "center";
-
           if (data.imageUrl) {
             const thumbUrl = data.imageUrl.replace(
               "/upload/",
               "/upload/w_100,q_auto,f_auto/",
             );
-
-            imageTd.innerHTML = `${data.imageUrl}${thumbUrl}</a>`;
-
             imageTd.innerHTML = `<img src="${thumbUrl}" loading="lazy" style="width:100px; max-height:100px; object-fit:cover; border-radius:8px; border:1px solid #ddd;" >`;
           } else {
             imageTd.textContent = "-";
           }
-
+          
           const dateTd = document.createElement("td");
 
           dateTd.className = "center";
