@@ -8,7 +8,7 @@
 ## 先代スミスを探せ④
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/261009.jpg" alt="先代スミスを探せ④">
+<img src="i/261009.png" alt="先代スミスを探せ④">
 </div>
 <div class="blog-content">
 おにぎり屋に到着。🍙を買いつつ聞き込みをしたところ、どうやら先代スミスらしき人物が常連の模様。早速、会いに行くことに。 
