@@ -72,4 +72,6 @@
     <script type="module" src="./js/highreview.js"></script>
 </body>
 
+###  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
+
 <button id="backToTop" title="ページ上部へ">↑</button>
