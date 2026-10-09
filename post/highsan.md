@@ -19,6 +19,7 @@
 
 ##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
 ##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
+##  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
 
 ## 感想,評価
 <head>
@@ -71,7 +72,5 @@
     </div>
     <script type="module" src="./js/highreview.js"></script>
 </body>
-
-###  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
 
 <button id="backToTop" title="ページ上部へ">↑</button>
