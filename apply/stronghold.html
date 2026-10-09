@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stronghold&Fortress掲示板</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #1e3a8a;
+        border-bottom: 3px solid #2563eb;
+        padding-bottom: 10px;
+      }
+
+      .nickname-input {
+        width: 100%;
+        max-width: 420px;
+        padding: 10px 12px;
+        font-size: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        margin: 8px 0 20px;
+      }
+
+      .nickname-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+      }
+
+      .section-title {
+        margin: 12px 0 8px;
+        font-weight: bold;
+        color: #1e3a8a;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+
+      .checkbox-item input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .button-area {
+        margin-top: 15px;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      button:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .table-wrapper {
+        margin-top: 30px;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th {
+        background: #2563eb;
+        color: white;
+        padding: 12px;
+        text-align: center;
+      }
+
+      td {
+        padding: 12px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      tr:hover {
+        background-color: #f8fafc;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .date-col {
+        width: 180px;
+        white-space: nowrap;
+      }
+
+      .msg-col {
+        word-break: break-word;
+      }
+
+      .selection-col {
+        min-width: 180px;
+        word-break: break-word;
+      }
+
+      .loading {
+        text-align: center;
+        color: #666;
+        padding: 20px;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .pagination button {
+        min-width: 80px;
+        padding: 8px 16px;
+      }
+
+      .page-info {
+        min-width: 100px;
+        text-align: center;
+        color: #555;
+        font-size: 14px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        .date-col {
+          width: 90px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>📋 Stronghold&Fortress掲示板</h2>
+
+      <label for="nickname"><strong>同盟コード</strong></label
+      ><br />
+      <input
+        id="nickname"
+        class="nickname-input"
+        type="text"
+        maxlength="40"
+        placeholder="同盟コードを入力してください"
+      />
+
+      <div class="section-title">要塞（4か所）</div>
+      <div id="fortCheckboxes" class="checkbox-grid"></div>
+
+      <div class="section-title">砦（12か所）</div>
+      <div id="strongholdCheckboxes" class="checkbox-grid"></div>
+
+      <div class="button-area">
+        <button id="sendBtn" onclick="saveMessage()">送信</button>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="pagination">
+          <button id="prevBtn" onclick="prevPage()">← 上一页</button>
+
+          <span id="pageInfo" class="page-info"> 第 1 页 </span>
+
+          <button id="nextBtn" onclick="nextPage()">下一页 →</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 50px">No</th>
+              <th>同盟コード</th>
+              <th>要塞（4か所）</th>
+              <th>砦（12か所）</th>
+              <th class="date-col">投稿日時</th>
+            </tr>
+          </thead>
+
+          <tbody id="messageTable">
+            <tr>
+              <td colspan="5" class="loading">読み込み中...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+        query,
+        orderBy,
+        limit,
+        startAfter,
+      } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDzMPb6IcHPtkpVyqcKKf9Wc9h77_axpV0",
+        authDomain: "whiteout-stronghold.firebaseapp.com",
+        projectId: "whiteout-stronghold",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      // =========================
+      // 配置
+      // =========================
+
+      const PAGE_SIZE = 10;
+
+      let currentPage = 1;
+      let loading = false;
+      let hasNextPage = false;
+
+      // 已读取页面缓存
+      const pageCache = {};
+
+      // 每页最后一条，用于下一页查询
+      const pageCursors = {};
+
+      // =========================
+      // DOM
+      // =========================
+
+      const nicknameBox = document.getElementById("nickname");
+      const fortCheckboxes = document.getElementById("fortCheckboxes");
+      const strongholdCheckboxes = document.getElementById(
+        "strongholdCheckboxes",
+      );
+
+      // チェックボックスを自動生成
+      function createCheckboxes(container, prefix, count, groupName) {
+        for (let i = 1; i <= count; i++) {
+          const label = document.createElement("label");
+          label.className = "checkbox-item";
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = groupName;
+          checkbox.value = `${prefix}${i}`;
+
+          const text = document.createElement("span");
+          text.textContent = `${prefix}${i}`;
+
+          label.appendChild(checkbox);
+          label.appendChild(text);
+          container.appendChild(label);
+        }
+      }
+
+      createCheckboxes(fortCheckboxes, "要塞", 4, "forts");
+      createCheckboxes(strongholdCheckboxes, "砦", 12, "strongholds");
+
+      function getCheckedValues(groupName) {
+        return Array.from(
+          document.querySelectorAll(`input[name="${groupName}"]:checked`),
+        ).map((checkbox) => checkbox.value);
+      }
+
+      const sendBtn = document.getElementById("sendBtn");
+
+      const tbody = document.getElementById("messageTable");
+
+      const prevBtn = document.getElementById("prevBtn");
+
+      const nextBtn = document.getElementById("nextBtn");
+
+      const pageInfo = document.getElementById("pageInfo");
+
+      // =========================
+      // 发布消息
+      // =========================
+
+      window.saveMessage = async function () {
+        const nickname = nicknameBox.value.trim();
+        const forts = getCheckedValues("forts");
+        const strongholds = getCheckedValues("strongholds");
+
+        if (!nickname) {
+          alert("同盟コードを入力してください。");
+          nicknameBox.focus();
+          return;
+        }
+
+        if (forts.length === 0 && strongholds.length === 0) {
+          alert("要塞または砦を1つ以上選択してください。");
+          return;
+        }
+
+        try {
+          sendBtn.disabled = true;
+
+          await addDoc(collection(db, "feedback"), {
+            nickname,
+            forts,
+            strongholds,
+            createdAt: new Date().toISOString(),
+          });
+
+          nicknameBox.value = "";
+          document
+            .querySelectorAll('input[name="forts"], input[name="strongholds"]')
+            .forEach((checkbox) => {
+              checkbox.checked = false;
+            });
+
+          // 新数据产生后清除分页缓存
+          clearPagination();
+
+          await loadPage(1);
+        } catch (e) {
+          console.error(e);
+
+          alert("投稿に失敗しました。");
+        } finally {
+          sendBtn.disabled = false;
+        }
+      };
+
+      // =========================
+      // 清除分页缓存
+      // =========================
+
+      function clearPagination() {
+        Object.keys(pageCache).forEach((key) => delete pageCache[key]);
+
+        Object.keys(pageCursors).forEach((key) => delete pageCursors[key]);
+
+        currentPage = 1;
+        hasNextPage = false;
+      }
+
+      // =========================
+      // 加载页面
+      // =========================
+
+      async function loadPage(page) {
+        if (loading) {
+          return;
+        }
+
+        loading = true;
+
+        prevBtn.disabled = true;
+        nextBtn.disabled = true;
+
+        try {
+          // =======================
+          // 优先使用缓存
+          // =======================
+
+          if (pageCache[page]) {
+            renderPage(page, pageCache[page]);
+
+            loading = false;
+
+            return;
+          }
+
+          // =======================
+          // Firestore 查询
+          // =======================
+
+          let q;
+
+          const collectionRef = collection(db, "feedback");
+
+          if (page === 1) {
+            q = query(
+              collectionRef,
+              orderBy("createdAt", "desc"),
+              limit(PAGE_SIZE),
+            );
+          } else {
+            const lastDoc = pageCursors[page - 1];
+
+            if (!lastDoc) {
+              throw new Error("分页游标不存在");
+            }
+
+            q = query(
+              collectionRef,
+              orderBy("createdAt", "desc"),
+              startAfter(lastDoc),
+              limit(PAGE_SIZE),
+            );
+          }
+
+          showLoading();
+
+          const snapshot = await getDocs(q);
+
+          const docs = snapshot.docs;
+
+          // 保存页面数据
+          pageCache[page] = docs;
+
+          // 保存分页游标
+          if (docs.length > 0) {
+            pageCursors[page] = docs[docs.length - 1];
+          }
+
+          renderPage(page, docs);
+        } catch (e) {
+          console.error(e);
+
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="5" class="center">
+                データ取得エラー
+              </td>
+            </tr>
+          `;
+
+          nextBtn.disabled = true;
+        } finally {
+          loading = false;
+        }
+      }
+
+      // =========================
+      // 显示页面
+      // =========================
+
+      function renderPage(page, docs) {
+        tbody.innerHTML = "";
+
+        if (docs.length === 0) {
+          tbody.innerHTML = `
+            <tr>
+              <td colspan="5" class="center">
+                投稿はまだありません。
+              </td>
+            </tr>
+          `;
+
+          hasNextPage = false;
+
+          currentPage = page;
+
+          pageInfo.textContent = `第 ${page} 页`;
+
+          prevBtn.disabled = page <= 1;
+
+          nextBtn.disabled = true;
+
+          return;
+        }
+
+        docs.forEach((doc, index) => {
+          const data = doc.data();
+
+          const date = data.createdAt
+            ? new Date(data.createdAt).toLocaleString("ja-JP")
+            : "";
+
+          const tr = document.createElement("tr");
+
+          const noTd = document.createElement("td");
+
+          noTd.className = "center";
+
+          noTd.textContent = (page - 1) * PAGE_SIZE + index + 1;
+
+          const nicknameTd = document.createElement("td");
+          nicknameTd.textContent = data.nickname ?? "";
+
+          const fortsTd = document.createElement("td");
+          fortsTd.className = "selection-col";
+          fortsTd.textContent = Array.isArray(data.forts)
+            ? data.forts.join("、")
+            : "";
+
+          const strongholdsTd = document.createElement("td");
+          strongholdsTd.className = "selection-col";
+          strongholdsTd.textContent = Array.isArray(data.strongholds)
+            ? data.strongholds.join("、")
+            : "";
+
+          const dateTd = document.createElement("td");
+
+          dateTd.className = "center";
+
+          dateTd.textContent = date;
+
+          tr.appendChild(noTd);
+          tr.appendChild(nicknameTd);
+          tr.appendChild(fortsTd);
+          tr.appendChild(strongholdsTd);
+          tr.appendChild(dateTd);
+
+          tbody.appendChild(tr);
+        });
+
+        currentPage = page;
+
+        pageInfo.textContent = `第 ${page} 页`;
+
+        prevBtn.disabled = page <= 1;
+
+        /*
+         * 每页严格只读取 PAGE_SIZE。
+         * 因此无法提前知道下一页是否存在。
+         */
+        hasNextPage = docs.length === PAGE_SIZE;
+
+        nextBtn.disabled = !hasNextPage;
+      }
+
+      // =========================
+      // Loading
+      // =========================
+
+      function showLoading() {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="5" class="loading">
+              読み込み中...
+            </td>
+          </tr>
+        `;
+      }
+
+      // =========================
+      // 下一页
+      // =========================
+
+      window.nextPage = async function () {
+        if (loading || !hasNextPage) {
+          return;
+        }
+
+        await loadPage(currentPage + 1);
+      };
+
+      // =========================
+      // 上一页
+      // =========================
+
+      window.prevPage = async function () {
+        if (loading || currentPage <= 1) {
+          return;
+        }
+
+        await loadPage(currentPage - 1);
+      };
+
+      // =========================
+      // 初始化
+      // =========================
+
+      loadPage(1);
+    </script>
+  </body>
+</html>
