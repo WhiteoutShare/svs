@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stronghold&Fortress掲示板</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+        background: #f4f7fb;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #1e3a8a;
+        border-bottom: 3px solid #2563eb;
+        padding-bottom: 10px;
+      }
+
+      .nickname-input {
+        width: 100%;
+        max-width: 160px;
+        padding: 10px 12px;
+        font-size: 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        margin: 8px 0 20px;
+        text-transform: uppercase;
+      }
+
+      .nickname-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
+      }
+
+      .section-title {
+        margin: 12px 0 8px;
+        font-weight: bold;
+        color: #1e3a8a;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .checkbox-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f8fafc;
+      }
+
+      .checkbox-item input {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      .button-area {
+        margin-top: 15px;
+      }
+
+      button {
+        background: #2563eb;
+        color: white;
+        border: none;
+        padding: 10px 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background: #1d4ed8;
+      }
+
+      button:disabled {
+        background: #cccccc;
+        cursor: not-allowed;
+      }
+
+      .summary-section {
+        margin-top: 32px;
+      }
+
+      .summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+
+      .summary-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 82px;
+        padding: 14px;
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        background: #f8fafc;
+        transition:
+          background-color 0.2s,
+          border-color 0.2s;
+      }
+
+      .summary-card.status-green {
+        background: #dcfce7;
+        border-color: #86efac;
+      }
+
+      .summary-card.status-yellow {
+        background: #fef9c3;
+        border-color: #fde047;
+      }
+
+      .summary-card.status-red {
+        background: #fee2e2;
+        border-color: #fca5a5;
+      }
+
+      .summary-card.status-red-hard {
+        background: red;
+        border-color: red;
+      }
+
+      .summary-icon {
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .summary-name {
+        color: #334155;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .summary-count {
+        margin-top: 6px;
+        color: #1d4ed8;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .summary-count span {
+        margin-right: 4px;
+        font-size: 16px;
+      }
+
+      .summary-status {
+        margin-top: 12px;
+        color: #64748b;
+        font-size: 13px;
+      }
+
+      /* 投票済み同盟コード */
+      .voted-alliances {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .alliance-code {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 12px;
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .no-alliances {
+        color: #64748b;
+        font-size: 14px;
+        padding: 8px 0;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        .summary-grid {
+          grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>📋 Stronghold&Fortress掲示板</h2>
+
+      <label for="nickname"><strong>同盟コード</strong></label>
+      <br />
+
+      <div>
+        <input
+          id="nickname"
+          class="nickname-input"
+          type="text"
+          maxlength="3"
+          placeholder="同盟コード"
+          autocomplete="off"
+          pattern="[A-Za-z]{3}"
+          required
+        />
+      </div>
+
+      <div>
+        <strong>再送信で申込内容を自動更新します。</strong>
+      </div>
+
+      <div class="section-title">要塞（4か所）</div>
+      <div id="fortCheckboxes" class="checkbox-grid"></div>
+
+      <div class="section-title">砦（12か所）</div>
+      <div id="strongholdCheckboxes" class="checkbox-grid"></div>
+
+      <div class="button-area">
+        <button id="sendBtn" type="button">送信</button>
+      </div>
+
+      <div class="summary-section">
+        <div class="section-title">📊 要塞・砦の申込状況</div>
+
+        <div class="section-title">要塞（4か所）</div>
+        <div id="fortSummary" class="summary-grid"></div>
+
+        <div class="section-title" style="margin-top: 24px">砦（12か所）</div>
+        <div id="strongholdSummary" class="summary-grid"></div>
+
+        <div id="summaryStatus" class="summary-status">集計中...</div>
+
+        <!-- 投票済み同盟コード -->
+        <div class="section-title" style="margin-top: 24px">
+          🏷️ 投票済み同盟コード
+        </div>
+        <div id="votedAlliances" class="voted-alliances">
+          <span class="no-alliances">読み込み中...</span>
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+
+      import {
+        getFirestore,
+        collection,
+        addDoc,
+        getDocs,
+      } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDzMPb6IcHPtkpVyqcKKf9Wc9h77_axV0",
+        authDomain: "whiteout-stronghold.firebaseapp.com",
+        projectId: "whiteout-stronghold",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const nicknameBox = document.getElementById("nickname");
+      const fortCheckboxes = document.getElementById("fortCheckboxes");
+      const strongholdCheckboxes = document.getElementById(
+        "strongholdCheckboxes",
+      );
+
+      const fortSummary = document.getElementById("fortSummary");
+      const strongholdSummary = document.getElementById("strongholdSummary");
+      const summaryStatus = document.getElementById("summaryStatus");
+      const votedAlliances = document.getElementById("votedAlliances");
+      const sendBtn = document.getElementById("sendBtn");
+
+      // 同盟コードは入力中も大文字に統一
+      nicknameBox.addEventListener("input", () => {
+        const start = nicknameBox.selectionStart;
+        const end = nicknameBox.selectionEnd;
+
+        nicknameBox.value = nicknameBox.value
+          .toUpperCase()
+          .replace(/\s/g, "")
+          .slice(0, 3);
+
+        nicknameBox.setSelectionRange(
+          Math.min(start, nicknameBox.value.length),
+          Math.min(end, nicknameBox.value.length),
+        );
+      });
+
+      // チェックボックス生成
+      function createCheckboxes(container, prefix, count, groupName) {
+        for (let i = 1; i <= count; i++) {
+          const label = document.createElement("label");
+          label.className = "checkbox-item";
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = groupName;
+          checkbox.value = `${prefix}${i}`;
+
+          const text = document.createElement("span");
+          text.textContent = `${prefix}${i}`;
+
+          label.append(checkbox, text);
+          container.appendChild(label);
+        }
+      }
+
+      createCheckboxes(fortCheckboxes, "要塞", 4, "forts");
+      createCheckboxes(strongholdCheckboxes, "砦", 12, "strongholds");
+
+      // 获取已选项目
+      function getCheckedValues(groupName) {
+        return Array.from(
+          document.querySelectorAll(`input[name="${groupName}"]:checked`),
+        ).map((checkbox) => checkbox.value);
+      }
+
+      sendBtn.addEventListener("click", saveMessage);
+
+      // 提交申请
+      async function saveMessage() {
+        const nickname = nicknameBox.value.trim().toUpperCase();
+        const forts = getCheckedValues("forts");
+        const strongholds = getCheckedValues("strongholds");
+
+        if (!/^[A-Z]{3}$/.test(nickname)) {
+          alert("3文字の同盟コードを入力してください。");
+          nicknameBox.focus();
+          return;
+        }
+
+        if (forts.length === 0 && strongholds.length === 0) {
+          alert("要塞または砦を1つ以上選択してください。");
+          return;
+        }
+
+        try {
+          sendBtn.disabled = true;
+
+          await addDoc(collection(db, "feedback"), {
+            nickname,
+            forts,
+            strongholds,
+            createdAt: new Date().toISOString(),
+          });
+
+          document
+            .querySelectorAll('input[name="forts"], input[name="strongholds"]')
+            .forEach((checkbox) => {
+              checkbox.checked = false;
+            });
+
+          nicknameBox.value = "";
+
+          await loadSummary();
+
+          alert("申込を登録しました。");
+        } catch (e) {
+          console.error(e);
+          alert("投稿に失敗しました。");
+        } finally {
+          sendBtn.disabled = false;
+        }
+      }
+
+      // 申込状況を表示
+      function renderSummary(container, prefix, count, icon, counts) {
+        container.innerHTML = "";
+
+        for (let i = 1; i <= count; i++) {
+          const name = `${prefix}${i}`;
+          const total = counts[name] || 0;
+
+          const card = document.createElement("div");
+          card.className = "summary-card";
+
+          if (total >= 1 && total <= 2) {
+            card.classList.add("status-green");
+          } else if (total >= 3 && total <= 4) {
+            card.classList.add("status-yellow");
+          } else if (total >= 5 && total <= 6) {
+            card.classList.add("status-red");
+          } else if (total >= 7) {
+            card.classList.add("status-red-hard");
+          }
+
+          const iconEl = document.createElement("div");
+          iconEl.className = "summary-icon";
+          iconEl.textContent = icon;
+
+          const info = document.createElement("div");
+
+          const nameEl = document.createElement("div");
+          nameEl.className = "summary-name";
+          nameEl.textContent = name;
+
+          const countEl = document.createElement("div");
+          countEl.className = "summary-count";
+
+          const peopleIcon = document.createElement("span");
+          peopleIcon.textContent = "👥";
+
+          countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
+
+          info.append(nameEl, countEl);
+          card.append(iconEl, info);
+          container.appendChild(card);
+        }
+      }
+
+      // 本周一（JST）00:00 のタイムスタンプを取得
+      function getWeekStartJST(now) {
+        const JST_OFFSET = 9 * 60 * 60 * 1000;
+        const jstNow = new Date(now + JST_OFFSET);
+
+        const day = jstNow.getUTCDay();
+        const daysSinceMonday = day === 0 ? 6 : day - 1;
+
+        jstNow.setUTCHours(0, 0, 0, 0);
+        jstNow.setUTCDate(jstNow.getUTCDate() - daysSinceMonday);
+
+        return jstNow.getTime() - JST_OFFSET;
+      }
+
+      // 本周最新申请进行统计，同时显示已投票的同盟代码
+      async function loadSummary() {
+        summaryStatus.textContent = "集計中...";
+        votedAlliances.innerHTML =
+          '<span class="no-alliances">読み込み中...</span>';
+
+        try {
+          const snapshot = await getDocs(collection(db, "feedback"));
+          const now = Date.now();
+          const weekStart = getWeekStartJST(now);
+
+          // 每个同盟仅保留本周最新的一条记录
+          const latestByAlliance = new Map();
+
+          snapshot.forEach((doc) => {
+            const data = doc.data();
+
+            if (typeof data.nickname !== "string" || !data.createdAt) {
+              return;
+            }
+
+            const nickname = data.nickname.trim().toUpperCase();
+            const createdAt = new Date(data.createdAt).getTime();
+
+            if (
+              !nickname ||
+              !Number.isFinite(createdAt) ||
+              createdAt < weekStart ||
+              createdAt > now
+            ) {
+              return;
+            }
+
+            // 同盟代码不区分大小写
+            const key = nickname;
+            const previous = latestByAlliance.get(key);
+
+            if (!previous || createdAt > previous.createdAt) {
+              latestByAlliance.set(key, {
+                createdAt,
+                data,
+              });
+            }
+          });
+
+          const fortCounts = {};
+          const strongholdCounts = {};
+
+          latestByAlliance.forEach(({ data }) => {
+            if (Array.isArray(data.forts)) {
+              data.forts.forEach((name) => {
+                if (/^要塞[1-4]$/.test(name)) {
+                  fortCounts[name] = (fortCounts[name] || 0) + 1;
+                }
+              });
+            }
+
+            if (Array.isArray(data.strongholds)) {
+              data.strongholds.forEach((name) => {
+                if (/^砦([1-9]|1[0-2])$/.test(name)) {
+                  strongholdCounts[name] = (strongholdCounts[name] || 0) + 1;
+                }
+              });
+            }
+          });
+
+          // 显示要塞和砦的统计
+          renderSummary(fortSummary, "要塞", 4, "🏰", fortCounts);
+
+          renderSummary(strongholdSummary, "砦", 12, "🛡️", strongholdCounts);
+
+          // 显示已投票同盟代码，去重并排序
+          votedAlliances.innerHTML = "";
+
+          const allianceCodes = Array.from(latestByAlliance.keys()).sort();
+
+          if (allianceCodes.length < 3) {
+            const empty = document.createElement("span");
+            empty.className = "no-alliances";
+            empty.textContent = "投票した同盟がまだ十分ではありません。";
+            votedAlliances.appendChild(empty);
+          } else {
+            allianceCodes.forEach((code) => {
+              const item = document.createElement("span");
+              item.className = "alliance-code";
+              item.textContent = code;
+              votedAlliances.appendChild(item);
+            });
+          }
+
+          summaryStatus.textContent = `今週の有効申込：${latestByAlliance.size} 同盟`;
+        } catch (e) {
+          console.error(e);
+
+          summaryStatus.textContent = "集計データを取得できませんでした。";
+
+          votedAlliances.innerHTML =
+            '<span class="no-alliances">同盟コードを取得できませんでした。</span>';
+        }
+      }
+
+      // 初期表示
+      loadSummary();
+    </script>
+  </body>
+</html>
