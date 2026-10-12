@@ -1,4 +1,4 @@
-# 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/rule)  
+# 🏰 [SVS 王城決戦準備フェーズ・ルール](https://whiteoutshare.github.io/svs/rule)  
 
 # [SVS参加情報・意見・感想掲示板](https://whiteoutshare.github.io/svs/msgs)
 
