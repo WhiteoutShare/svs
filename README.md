@@ -2,30 +2,33 @@
 
 ## ⚔️ SVS関連
 
-* 🏰 [SVS 王城決戦準備フェーズ・ルール](https://whiteoutshare.github.io/svs/rule){:target="_blank"}
-* 💬 [SVS参加情報・意見・感想掲示板](https://whiteoutshare.github.io/svs/msgs){:target="_blank"}
-* ⭐ [おすすめ：要塞・砦 申込掲示板](https://whiteoutshare.github.io/svs/apply/stronghold){:target="_blank"}
+* 🏰 <a href="https://whiteoutshare.github.io/svs/rule" target="_blank" rel="noopener noreferrer">SVS 王城決戦準備フェーズ・ルール</a>
+* 💬 <a href="https://whiteoutshare.github.io/svs/msgs" target="_blank" rel="noopener noreferrer">SVS参加情報・意見・感想掲示板</a>
+
+## 🏯 要塞・砦 申込掲示板
+
+* ⭐ <a href="https://whiteoutshare.github.io/svs/apply/stronghold" target="_blank" rel="noopener noreferrer">要塞・砦 申込掲示板（おすすめ）</a>
 
 ## 🛠️ その他の便利ツール
 
-* 🎨 [太陽城マス塗りツール](https://sfc-painter.dendentkg.workers.dev/){:target="_blank"}
-* 🕒 [JST Time Tool](https://jst-time-tool.dendentkg.workers.dev/){:target="_blank"}
+* 🎨 <a href="https://sfc-painter.dendentkg.workers.dev/" target="_blank" rel="noopener noreferrer">太陽城マス塗りツール</a>
+* 🕒 <a href="https://jst-time-tool.dendentkg.workers.dev/" target="_blank" rel="noopener noreferrer">JST Time Tool</a>
 
+## 📚 ホワイトアウト・サバイバル攻略
 
+* 📖 <a href="https://www.whiteoutsurvival.wiki/ja/" target="_blank" rel="noopener noreferrer">ホワイトアウト・サバイバル公式攻略 Wiki</a>
+* 📖 <a href="https://altema.jp/whiteoutsurvival/" target="_blank" rel="noopener noreferrer">ホワイトアウト・サバイバル攻略 Wiki（アルテマ）</a>
 
-## ホワイトアウトサバイバル攻略
-* [ホワイトアウトサバイバル公式攻略wiki](https://www.whiteoutsurvival.wiki/ja/)  
-* [ホワイトアウトサバイバル攻略wiki](https://altema.jp/whiteoutsurvival/)
+## 🎁 GiftCode関連
 
-
-* [PCまたはMacでホワイトアウト・サバイバルをプレイする](https://www.bluestacks.com/ja/apps/action/white-out-survival-on-pc.html)
-
-## 🎁 GiftCode
-
-* [GiftCode](https://wosrewards.com/giftcodes)
-* [Official Gift Center](https://wos-giftcode.centurygame.com/)
-* 📝 [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9){:target="_blank"}
+* 🎁 <a href="https://wosrewards.com/giftcodes" target="_blank" rel="noopener noreferrer">All Gift Codes</a>
+* 🎁 <a href="https://wos-giftcode.centurygame.com/" target="_blank" rel="noopener noreferrer">Official Gift Center（公式）</a>
+* 📝 <a href="https://forms.gle/6sC5Z22fDnEyPhZv9" target="_blank" rel="noopener noreferrer">4471王国限定｜GiftCode自動配布用アンケート</a>
 
 ## 🔥 お楽しみ
 
-* 📖 [ヒゲ物語、絶賛更新中！](https://whiteoutshare.github.io/svs/post/highsan){:target="_blank"}
+* 📖 <a href="https://whiteoutshare.github.io/svs/post/highsan" target="_blank" rel="noopener noreferrer">ヒゲ物語、絶賛更新中！</a>
+
+## 💻 PC・Macでプレイする
+
+* 🖥️ <a href="https://www.bluestacks.com/ja/apps/action/white-out-survival-on-pc.html" target="_blank" rel="noopener noreferrer">PCまたはMacでホワイトアウト・サバイバルをプレイする（BlueStacks）</a>
