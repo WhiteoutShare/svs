@@ -11,10 +11,21 @@
 * 🎨 [太陽城マス塗りツール](https://sfc-painter.dendentkg.workers.dev/){:target="_blank"}
 * 🕒 [JST Time Tool](https://jst-time-tool.dendentkg.workers.dev/){:target="_blank"}
 
-## 🔥 お楽しみ
 
-* 📖 [ヒゲ物語、絶賛更新中！](https://whiteoutshare.github.io/svs/post/highsan){:target="_blank"}
+
+## ホワイトアウトサバイバル攻略
+* [ホワイトアウトサバイバル公式攻略wiki](https://www.whiteoutsurvival.wiki/ja/)  
+* [ホワイトアウトサバイバル攻略wiki](https://altema.jp/whiteoutsurvival/)
+
+
+* [PCまたはMacでホワイトアウト・サバイバルをプレイする](https://www.bluestacks.com/ja/apps/action/white-out-survival-on-pc.html)
 
 ## 🎁 GiftCode
 
+* [GiftCode](https://wosrewards.com/giftcodes)
+* [Official Gift Center](https://wos-giftcode.centurygame.com/)
 * 📝 [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9){:target="_blank"}
+
+## 🔥 お楽しみ
+
+* 📖 [ヒゲ物語、絶賛更新中！](https://whiteoutshare.github.io/svs/post/highsan){:target="_blank"}
