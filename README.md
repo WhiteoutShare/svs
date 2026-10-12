@@ -1,11 +1,19 @@
+# 目標
+
+データ整理や便利なツールの作成を通じて、4471王国をもっと活発で、気軽に楽しめる環境にしていきたいと思っています！
+
 ## ⚔️ SVS関連
 
 * 🏰 <a href="https://whiteoutshare.github.io/svs/rule" target="_blank" rel="noopener noreferrer">SVS 王城決戦準備フェーズ・ルール</a>
 * 💬 <a href="https://whiteoutshare.github.io/svs/msgs" target="_blank" rel="noopener noreferrer">SVS参加情報・意見・感想掲示板</a>
 
+SVSに関する提案や意見・感想はもちろん、各同盟で必要な管理ツールのアイデアや、データ整理に関する相談なども自由に投稿してください！
+
 ## 🏯 要塞・砦 申込掲示板
 
 * ⭐ <a href="https://whiteoutshare.github.io/svs/apply/stronghold" target="_blank" rel="noopener noreferrer">要塞・砦 申込掲示板（おすすめ）</a>
+
+申請されないまま残ってしまう要塞や砦を減らし、王国全体で限られた資源を最大限に活用することを目指しています！
 
 ## 🛠️ その他の便利ツール
 
