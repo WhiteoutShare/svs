@@ -1,6 +1,6 @@
 # 🏰 [SVS 王城決戦ルール](https://whiteoutshare.github.io/svs/rule)  
 
-# [SvS掲示板](https://whiteoutshare.github.io/svs/msgs)
+# [SVS参加情報・意見・感想掲示板](https://whiteoutshare.github.io/svs/msgs)
 
 # [おすすめ：要塞・砦 申込掲示板](https://whiteoutshare.github.io/svs/apply/stronghold)
 
