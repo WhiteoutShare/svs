@@ -1,5 +1,3 @@
-# 🏰 SVS・王国便利ツール集
-
 ## ⚔️ SVS関連
 
 * 🏰 <a href="https://whiteoutshare.github.io/svs/rule" target="_blank" rel="noopener noreferrer">SVS 王城決戦準備フェーズ・ルール</a>
