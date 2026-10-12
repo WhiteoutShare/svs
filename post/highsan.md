@@ -8,7 +8,7 @@
 ## いざ出発
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/261012-01.png" alt="先代スミスを探せ④">
+<img src="i/261012-01.png" alt="いざ出発">
 </div>
 <div class="blog-content">
 
