@@ -2,7 +2,7 @@
 
 # [SvS掲示板](https://whiteoutshare.github.io/svs/msgs)
 
-# [要塞・砦 申込掲示板](https://whiteoutshare.github.io/svs/apply/stronghold)
+# [おすすめ：要塞・砦 申込掲示板](https://whiteoutshare.github.io/svs/apply/stronghold)
 
 その他、ツール  
 
