@@ -5,15 +5,15 @@
 
 # 🔥 ヒゲ物語、絶賛更新中！
 
-## いざ出発
+## ?
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/261012-01.png" alt="いざ出発">
+<img src="i/261013-01.png" alt="?">
 </div>
 <div class="blog-content">
-
+あの立ち振る舞い！それはまさしく先代スミス！やっとのことで、見つける🔍事ができたのであった。
 <br><br>
-
+次回「感動の再会」
 </div>
 </div>
 
