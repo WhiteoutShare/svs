@@ -5,10 +5,10 @@
 
 # 🔥 ヒゲ物語、絶賛更新中！
 
-## ?
+## 先代?
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/261013-01.png" alt="?">
+<img src="i/261013-01.png" alt="先代?">
 </div>
 <div class="blog-content">
 あの立ち振る舞い！それはまさしく先代スミス！やっとのことで、見つける🔍事ができたのであった。
