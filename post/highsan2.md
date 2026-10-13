@@ -155,6 +155,19 @@
 </div>
 </div>
 
+## ?
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/261013-01.png" alt="?">
+</div>
+<div class="blog-content">
+あの立ち振る舞い！それはまさしく先代スミス！やっとのことで、見つける🔍事ができたのであった。
+<br><br>
+次回「感動の再会」
+</div>
+</div>
+
+
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 ## [感想,評価](https://whiteoutshare.github.io/svs/post/highsan#感想評価)
 <button id="backToTop" title="ページ上部へ">↑</button>
