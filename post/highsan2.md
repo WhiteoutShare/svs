@@ -20,6 +20,7 @@
 - [先代スミスを探せ④](#先代スミスを探せ-3)
 - [いざ出発](#いざ出発)
 - [先代?](#先代)
+- [感動の再会](#感動の再会)
 
 ## 家の蔵
 <div class="blog-item">
@@ -167,6 +168,17 @@
 </div>
 </div>
 
+## 感動の再会
+<div class="blog-item">
+<div class="blog-image">
+<img src="i/261014-01.png" alt="感動の再会">
+</div>
+<div class="blog-content">
+ついに先代スミスと感動の再会をはたした親子
+<br><br>
+エピソード2完結
+</div>
+</div>
 
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 ## [感想,評価](https://whiteoutshare.github.io/svs/post/highsan#感想評価)
