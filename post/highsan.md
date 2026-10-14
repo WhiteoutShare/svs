@@ -5,15 +5,15 @@
 
 # 🔥 ヒゲ物語、絶賛更新中！
 
-## 先代?
+## 感動の再会
 <div class="blog-item">
 <div class="blog-image">
-<img src="i/261013-01.png" alt="先代?">
+<img src="i/261014-01.png" alt="感動の再会">
 </div>
 <div class="blog-content">
-あの立ち振る舞い！それはまさしく先代スミス！やっとのことで、見つける🔍事ができたのであった。
+ついに先代スミスと感動の再会をはたした親子
 <br><br>
-次回「感動の再会」
+エピソード2完結
 </div>
 </div>
 
