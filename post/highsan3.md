@@ -6,7 +6,7 @@
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 
 # 🔥 ヒゲ物語
-## ヒゲモノ エピソード2
+## ヒゲモノ エピソード3
 ## 📖 目次
 <ul id="toc"></ul>
 <main id="stories"></main>
