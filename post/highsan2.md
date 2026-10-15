@@ -20,7 +20,7 @@
     }
 
     async function loadStories() {
-      const response = await fetch("./csv/highsan2.csv?v=${Date.now()}");
+      const response = await fetch(`./csv/highsan2.csv?v=${Date.now()}`);
 
       if (!response.ok) {
         throw new Error("CSVを読み込めませんでした");
