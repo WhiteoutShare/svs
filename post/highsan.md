@@ -129,18 +129,6 @@
   });
 </script>
 
-## 感動の再会
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/261014-01.png" alt="感動の再会">
-</div>
-<div class="blog-content">
-ついに先代スミスと感動の再会をはたした親子
-<br><br>
-エピソード2完結
-</div>
-</div>
-
 ##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
 ##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 ##  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
