@@ -126,9 +126,7 @@
         const next = document.createElement("p");
 
         if (story.next) {
-          next.textContent = "次回「" + story.next + "」";
-        } else {
-          next.textContent = "エピソード2完結";
+          next.textContent = story.next;
         }
 
         contentBox.appendChild(next);
