@@ -4,187 +4,102 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>High BackEnd</title>
-
     <style>
-      * {
-        box-sizing: border-box;
-      }
-
+      * { box-sizing: border-box; }
       body {
         font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
-        background: #f4f7fb;
-        margin: 0;
-        padding: 30px;
+        background: #f4f7fb; margin: 0; padding: 30px;
       }
-
       .container {
-        max-width: 1100px;
-        margin: auto;
-        background: white;
-        border-radius: 16px;
-        padding: 30px;
+        max-width: 1200px; margin: auto; background: white;
+        border-radius: 16px; padding: 30px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       }
-
       h2 {
-        margin-top: 0;
-        color: #1e3a8a;
-        border-bottom: 3px solid #2563eb;
-        padding-bottom: 10px;
+        margin-top: 0; color: #1e3a8a;
+        border-bottom: 3px solid #2563eb; padding-bottom: 10px;
       }
-
-      textarea {
-        width: 100%;
-        min-height: 120px;
-        padding: 12px;
-        font-size: 14px;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        resize: vertical;
+      input[type="text"], textarea {
+        width: 100%; padding: 12px; font-size: 14px;
+        border: 1px solid #d1d5db; border-radius: 8px;
       }
-
-      textarea:focus {
-        outline: none;
-        border-color: #2563eb;
+      textarea { min-height: 120px; resize: vertical; }
+      input[type="text"]:focus, textarea:focus {
+        outline: none; border-color: #2563eb;
         box-shadow: 0 0 5px rgba(37, 99, 235, 0.3);
       }
-
-      .button-area {
-        margin-top: 15px;
+      .field { margin-bottom: 14px; }
+      .field label {
+        display: block; margin-bottom: 6px; font-weight: bold; color: #374151;
       }
-
+      .button-area { margin-top: 15px; }
       button {
-        background: #2563eb;
-        color: white;
-        border: none;
-        padding: 10px 24px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 14px;
-        font-weight: bold;
-        transition: 0.2s;
+        background: #2563eb; color: white; border: none;
+        padding: 10px 24px; border-radius: 8px; cursor: pointer;
+        font-size: 14px; font-weight: bold; transition: 0.2s;
       }
-
-      button:hover {
-        background: #1d4ed8;
-      }
-
-      button:disabled {
-        background: #cccccc;
-        cursor: not-allowed;
-      }
-
-      .table-wrapper {
-        margin-top: 30px;
-        overflow-x: auto;
-      }
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      th {
-        background: #2563eb;
-        color: white;
-        padding: 12px;
-        text-align: center;
-      }
-
-      td {
-        padding: 12px;
-        border-bottom: 1px solid #e5e7eb;
-      }
-
-      tr:hover {
-        background-color: #f8fafc;
-      }
-
-      .center {
-        text-align: center;
-      }
-
-      .date-col {
-        width: 180px;
-        white-space: nowrap;
-      }
-
-      .msg-col {
-        word-break: break-word;
-      }
-
-      .loading {
-        text-align: center;
-        color: #666;
-        padding: 20px;
-      }
-
+      button:hover { background: #1d4ed8; }
+      button:disabled { background: #cccccc; cursor: not-allowed; }
+      .table-wrapper { margin-top: 30px; overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; min-width: 850px; }
+      th { background: #2563eb; color: white; padding: 12px; text-align: center; }
+      td { padding: 12px; border-bottom: 1px solid #e5e7eb; }
+      tr:hover { background-color: #f8fafc; }
+      .center { text-align: center; }
+      .date-col { width: 180px; white-space: nowrap; }
+      .msg-col { word-break: break-word; white-space: pre-wrap; }
+      .loading { text-align: center; color: #666; padding: 20px; }
       .pagination {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 5px;
+        display: flex; justify-content: center; align-items: center;
+        gap: 8px; margin-bottom: 5px;
       }
-
-      .pagination button {
-        min-width: 80px;
-        padding: 8px 16px;
+      .pagination button { min-width: 80px; padding: 8px 16px; }
+      .page-info { min-width: 100px; text-align: center; color: #555; font-size: 14px; }
+      .thumb {
+        width: 100px; max-height: 100px; object-fit: cover;
+        border-radius: 8px; border: 1px solid #ddd;
       }
-
-      .page-info {
-        min-width: 100px;
-        text-align: center;
-        color: #555;
-        font-size: 14px;
-      }
-
       @media (max-width: 768px) {
-        body {
-          padding: 15px;
-        }
-
-        .container {
-          padding: 20px;
-        }
-
-        .date-col {
-          width: 90px;
-        }
+        body { padding: 15px; }
+        .container { padding: 20px; }
+        .date-col { width: 140px; }
       }
     </style>
   </head>
-
   <body>
     <div class="container">
       <h2>High BackEnd</h2>
 
-      <textarea
-        id="msg"
-        maxlength="500"
-        placeholder="メッセージを入力してください..."
-      ></textarea>
-      <br />
-      <input type="file" id="imageFile" accept="image/*" />
+      <div class="field">
+        <label for="title">Title</label>
+        <input type="text" id="title" maxlength="200" placeholder="タイトルを入力してください..." />
+      </div>
+
+      <div class="field">
+        <label for="next">Next</label>
+        <input type="text" id="next" maxlength="500" placeholder="Next を入力してください..." />
+      </div>
+
+      <div class="field">
+        <label for="msg">メッセージ内容</label>
+        <textarea id="msg" maxlength="500" placeholder="メッセージを入力してください..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="imageFile">画像（任意・5MB以下）</label>
+        <input type="file" id="imageFile" accept="image/*" />
+      </div>
 
       <div class="button-area">
-        <button id="sendBtn" onclick="saveMessage()">送信</button>
-
-        <span
-          id="counter"
-          style="margin-left: 15px; color: #666; font-size: 14px"
-        >
-          0/500
-        </span>
+        <button id="sendBtn" type="button">送信</button>
+        <span id="counter" style="margin-left: 15px; color: #666; font-size: 14px">0/500</span>
       </div>
 
       <div class="table-wrapper">
         <div class="pagination">
-          <button id="prevBtn" onclick="prevPage()">← 上一页</button>
-
-          <span id="pageInfo" class="page-info"> 第 1 页 </span>
-
-          <button id="nextBtn" onclick="nextPage()">下一页 →</button>
+          <button id="prevBtn" type="button">← 上一页</button>
+          <span id="pageInfo" class="page-info">第 1 页</span>
+          <button id="nextBtn" type="button">下一页 →</button>
         </div>
 
         <table>
@@ -192,15 +107,14 @@
             <tr>
               <th style="width: 50px">No</th>
               <th style="width: 120px">画像</th>
+              <th>Title</th>
+              <th>Next</th>
               <th>メッセージ内容</th>
               <th class="date-col">投稿日時</th>
             </tr>
           </thead>
-
           <tbody id="messageTable">
-            <tr>
-              <td colspan="3" class="loading">読み込み中...</td>
-            </tr>
+            <tr><td colspan="6" class="loading">読み込み中...</td></tr>
           </tbody>
         </table>
       </div>
@@ -208,16 +122,8 @@
 
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
-
       import {
-        getFirestore,
-        collection,
-        addDoc,
-        getDocs,
-        query,
-        orderBy,
-        limit,
-        startAfter,
+        getFirestore, collection, addDoc, getDocs, query, orderBy, limit, startAfter
       } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
       const firebaseConfig = {
@@ -228,370 +134,246 @@
 
       const app = initializeApp(firebaseConfig);
       const db = getFirestore(app);
-
-      // =========================
-      // 配置
-      // =========================
-
       const PAGE_SIZE = 5;
 
       let currentPage = 1;
       let loading = false;
       let hasNextPage = false;
-
-      // 已读取页面缓存
       const pageCache = {};
-
-      // 每页最后一条，用于下一页查询
       const pageCursors = {};
 
-      // =========================
-      // DOM
-      // =========================
-
+      const titleBox = document.getElementById("title");
+      const nextBox = document.getElementById("next");
       const msgBox = document.getElementById("msg");
-
+      const imageFileInput = document.getElementById("imageFile");
       const counter = document.getElementById("counter");
-
       const sendBtn = document.getElementById("sendBtn");
-
       const tbody = document.getElementById("messageTable");
-
       const prevBtn = document.getElementById("prevBtn");
-
       const nextBtn = document.getElementById("nextBtn");
-
       const pageInfo = document.getElementById("pageInfo");
 
       async function uploadToCloudinary(file) {
         const formData = new FormData();
-
         formData.append("file", file);
-
         formData.append("upload_preset", "public_upload");
 
         const response = await fetch(
           "https://api.cloudinary.com/v1_1/sm7itxts/image/upload",
-          {
-            method: "POST",
-            body: formData,
-          },
+          { method: "POST", body: formData }
         );
-
         const result = await response.json();
 
-        if (!result.secure_url) {
-          throw new Error("Cloudinary Upload Error");
+        if (!response.ok || !result.secure_url) {
+          throw new Error(result.error?.message || "Cloudinary Upload Error");
         }
-
         return result.secure_url;
       }
-      // =========================
-      // 发布消息
-      // =========================
 
-      window.saveMessage = async function () {
+      async function saveMessage() {
+        const title = titleBox.value.trim();
+        const next = nextBox.value.trim();
         const msg = msgBox.value.trim();
 
-        if (!msg) {
-          alert("メッセージを入力してください。");
-
+        if (!title && !next && !msg && !imageFileInput.files[0]) {
+          alert("タイトル、Next、メッセージ、または画像を入力してください。");
           return;
         }
 
         try {
           sendBtn.disabled = true;
-
-          const imageFile = document.getElementById("imageFile").files[0];
+          const imageFile = imageFileInput.files[0];
           let imageUrl = "";
+
           if (imageFile) {
             if (imageFile.size > 5 * 1024 * 1024) {
               alert("画像は5MB以下にしてください");
-              sendBtn.disabled = false;
               return;
             }
             sendBtn.textContent = "Uploading...";
             imageUrl = await uploadToCloudinary(imageFile);
           }
-          sendBtn.textContent = "送信";
 
+          sendBtn.textContent = "送信中...";
           await addDoc(collection(db, "feedback"), {
+            title,
+            next,
             message: msg,
-            imageUrl: imageUrl,
+            imageUrl,
             createdAt: new Date().toISOString(),
           });
 
+          titleBox.value = "";
+          nextBox.value = "";
           msgBox.value = "";
-
-          document.getElementById("imageFile").value = "";
-
+          imageFileInput.value = "";
           counter.textContent = "0/500";
+          counter.style.color = "#666";
 
           clearPagination();
-
           await loadPage(1);
         } catch (e) {
           console.error(e);
-
-          alert("投稿に失敗しました。");
+          alert("投稿に失敗しました。Firebase または画像アップロードの設定を確認してください。");
         } finally {
           sendBtn.disabled = false;
-
           sendBtn.textContent = "送信";
         }
-      };
-
-      // =========================
-      // 清除分页缓存
-      // =========================
+      }
+      sendBtn.addEventListener("click", saveMessage);
 
       function clearPagination() {
         Object.keys(pageCache).forEach((key) => delete pageCache[key]);
-
         Object.keys(pageCursors).forEach((key) => delete pageCursors[key]);
-
         currentPage = 1;
         hasNextPage = false;
       }
 
-      // =========================
-      // 加载页面
-      // =========================
-
       async function loadPage(page) {
-        if (loading) {
-          return;
-        }
-
+        if (loading) return;
         loading = true;
-
         prevBtn.disabled = true;
         nextBtn.disabled = true;
 
         try {
-          // =======================
-          // 优先使用缓存
-          // =======================
-
           if (pageCache[page]) {
             renderPage(page, pageCache[page]);
-
-            loading = false;
-
             return;
           }
 
-          // =======================
-          // Firestore 查询
-          // =======================
-
+          const collectionRef = collection(db, "feedback");
           let q;
 
-          const collectionRef = collection(db, "feedback");
-
           if (page === 1) {
-            q = query(
-              collectionRef,
-              orderBy("createdAt", "desc"),
-              limit(PAGE_SIZE),
-            );
+            q = query(collectionRef, orderBy("createdAt", "desc"), limit(PAGE_SIZE));
           } else {
             const lastDoc = pageCursors[page - 1];
-
-            if (!lastDoc) {
-              throw new Error("分页游标不存在");
-            }
-
+            if (!lastDoc) throw new Error("分页游标不存在");
             q = query(
               collectionRef,
               orderBy("createdAt", "desc"),
               startAfter(lastDoc),
-              limit(PAGE_SIZE),
+              limit(PAGE_SIZE)
             );
           }
 
           showLoading();
-
           const snapshot = await getDocs(q);
-
           const docs = snapshot.docs;
-
-          // 保存页面数据
           pageCache[page] = docs;
-
-          // 保存分页游标
-          if (docs.length > 0) {
-            pageCursors[page] = docs[docs.length - 1];
-          }
-
+          if (docs.length > 0) pageCursors[page] = docs[docs.length - 1];
           renderPage(page, docs);
         } catch (e) {
           console.error(e);
-
-          tbody.innerHTML = `
-            <tr>
-              <td colspan="3" class="center">
-                データ取得エラー
-              </td>
-            </tr>
-          `;
-
+          tbody.replaceChildren();
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = 6;
+          td.className = "center";
+          td.textContent = "データ取得エラー";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
           nextBtn.disabled = true;
         } finally {
           loading = false;
+          // renderPage sets the correct button state after successful loads.
+          if (!pageCache[currentPage] && currentPage === 1) prevBtn.disabled = true;
         }
       }
 
-      // =========================
-      // 显示页面
-      // =========================
-
       function renderPage(page, docs) {
-        tbody.innerHTML = "";
+        tbody.replaceChildren();
 
         if (docs.length === 0) {
-          tbody.innerHTML = `
-            <tr>
-              <td colspan="3" class="center">
-                投稿はまだありません。
-              </td>
-            </tr>
-          `;
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = 6;
+          td.className = "center";
+          td.textContent = "投稿はまだありません。";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
 
           hasNextPage = false;
-
           currentPage = page;
-
           pageInfo.textContent = `第 ${page} 页`;
-
           prevBtn.disabled = page <= 1;
-
           nextBtn.disabled = true;
-
           return;
         }
 
         docs.forEach((doc, index) => {
           const data = doc.data();
-
-          const date = data.createdAt
-            ? new Date(data.createdAt).toLocaleString("ja-JP")
-            : "";
-
+          const date = data.createdAt ? new Date(data.createdAt).toLocaleString("ja-JP") : "";
           const tr = document.createElement("tr");
 
           const noTd = document.createElement("td");
-
           noTd.className = "center";
+          noTd.textContent = String((page - 1) * PAGE_SIZE + index + 1);
 
-          noTd.textContent = (page - 1) * PAGE_SIZE + index + 1;
-
-          const msgTd = document.createElement("td");
-
-          msgTd.className = "msg-col";
-          msgTd.textContent = data.message ?? "";
           const imageTd = document.createElement("td");
           imageTd.className = "center";
           if (data.imageUrl) {
-            const thumbUrl = data.imageUrl.replace(
-              "/upload/",
-              "/upload/w_100,q_auto,f_auto/",
-            );
-            imageTd.innerHTML = `<img src="${thumbUrl}" loading="lazy" style="width:100px; max-height:100px; object-fit:cover; border-radius:8px; border:1px solid #ddd;" >`;
+            const img = document.createElement("img");
+            img.className = "thumb";
+            img.loading = "lazy";
+            img.alt = "投稿画像";
+            img.src = data.imageUrl.replace("/upload/", "/upload/w_100,q_auto,f_auto/");
+            imageTd.appendChild(img);
           } else {
             imageTd.textContent = "-";
           }
-          
+
+          const titleTd = document.createElement("td");
+          titleTd.className = "msg-col";
+          titleTd.textContent = data.title || "-";
+
+          const nextTd = document.createElement("td");
+          nextTd.className = "msg-col";
+          nextTd.textContent = data.next || "-";
+
+          const msgTd = document.createElement("td");
+          msgTd.className = "msg-col";
+          msgTd.textContent = data.message || "-";
+
           const dateTd = document.createElement("td");
-
           dateTd.className = "center";
-
           dateTd.textContent = date;
 
-          tr.appendChild(noTd);
-          tr.appendChild(imageTd);
-          tr.appendChild(msgTd);
-          tr.appendChild(dateTd);
-
+          tr.append(noTd, imageTd, titleTd, nextTd, msgTd, dateTd);
           tbody.appendChild(tr);
         });
 
         currentPage = page;
-
         pageInfo.textContent = `第 ${page} 页`;
-
         prevBtn.disabled = page <= 1;
-
-        /*
-         * 每页严格只读取 PAGE_SIZE。
-         * 因此无法提前知道下一页是否存在。
-         */
         hasNextPage = docs.length === PAGE_SIZE;
-
         nextBtn.disabled = !hasNextPage;
       }
 
-      // =========================
-      // Loading
-      // =========================
-
       function showLoading() {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="3" class="loading">
-              読み込み中...
-            </td>
-          </tr>
-        `;
+        tbody.replaceChildren();
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.colSpan = 6;
+        td.className = "loading";
+        td.textContent = "読み込み中...";
+        tr.appendChild(td);
+        tbody.appendChild(tr);
       }
 
-      // =========================
-      // 下一页
-      // =========================
+      nextBtn.addEventListener("click", async () => {
+        if (!loading && hasNextPage) await loadPage(currentPage + 1);
+      });
 
-      window.nextPage = async function () {
-        if (loading || !hasNextPage) {
-          return;
-        }
-
-        await loadPage(currentPage + 1);
-      };
-
-      // =========================
-      // 上一页
-      // =========================
-
-      window.prevPage = async function () {
-        if (loading || currentPage <= 1) {
-          return;
-        }
-
-        await loadPage(currentPage - 1);
-      };
-
-      // =========================
-      // 字数统计
-      // =========================
+      prevBtn.addEventListener("click", async () => {
+        if (!loading && currentPage > 1) await loadPage(currentPage - 1);
+      });
 
       msgBox.addEventListener("input", () => {
         const length = msgBox.value.length;
-
         counter.textContent = `${length}/500`;
-
-        if (length > 500) {
-          counter.style.color = "red";
-
-          sendBtn.disabled = true;
-        } else {
-          counter.style.color = "#666";
-
-          sendBtn.disabled = false;
-        }
+        counter.style.color = length >= 500 ? "red" : "#666";
       });
-
-      // =========================
-      // 初始化
-      // =========================
 
       loadPage(1);
     </script>
