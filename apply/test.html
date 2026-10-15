@@ -436,7 +436,12 @@
           const peopleIcon = document.createElement("span");
           peopleIcon.textContent = "👥";
 
-          countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
+          // countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
+          if (total >= 1) {
+            countEl.append(peopleIcon, document.createTextNode(`申込あり`));
+          } else {
+            countEl.append(peopleIcon, document.createTextNode(`申込なし`));
+          }
 
           info.append(nameEl, countEl);
           card.append(iconEl, info);
