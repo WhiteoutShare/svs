@@ -12,7 +12,7 @@
 <ul id="toc"></ul>
 <main id="stories"></main>
   <script>
-    loadStories('./csv/highsan4.csv').catch(error => {
+    loadStories('./csv/highsan3.csv').catch(error => {
       console.error(error);
       document.getElementById("stories").textContent =
         "ストーリーの読み込みに失敗しました。CSVのパスを確認してください。";
