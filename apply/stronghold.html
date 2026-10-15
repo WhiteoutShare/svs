@@ -224,7 +224,7 @@
     <div class="container">
       <h2>📋 要塞・砦 申込掲示板</h2>
 
-      <label for="nickname"><strong>同盟コード</strong></label>
+      <label for="nickname"><strong>同盟略称</strong></label>
       <br />
 
       <div>
@@ -233,7 +233,7 @@
           class="nickname-input"
           type="text"
           maxlength="3"
-          placeholder="同盟コード例：HaO"
+          placeholder="同盟略称例：HaO"
           autocomplete="off"
           pattern="[A-Za-z]{3}"
           required
@@ -359,7 +359,7 @@
         const strongholds = getCheckedValues("strongholds");
 
         if (!/^[A-Z]{3}$/.test(nickname)) {
-          alert("3文字の同盟コードを入力してください。");
+          alert("3文字の同盟略称を入力してください。");
           nicknameBox.focus();
           return;
         }
@@ -559,7 +559,7 @@
           summaryStatus.textContent = "集計データを取得できませんでした。";
 
           votedAlliances.innerHTML =
-            '<span class="no-alliances">同盟コードを取得できませんでした。</span>';
+            '<span class="no-alliances">同盟略称を取得できませんでした。</span>';
         }
       }
 
