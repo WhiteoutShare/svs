@@ -1,63 +1,16 @@
+<head>
+  <link rel="stylesheet" href="./css/highsan.css">  
+  <script src="./js/backtotop.js"></script>  
+  <script src="./js/parsecsv.js"></script>
+</head>
+
+# 🔥 ヒゲ物語、絶賛更新中！
 
 <main id="stories"></main>
 
 <script>
-      // CSVを解析する。引用符内のカンマにも対応。
-    function parseCSV(text) {
-      const rows = [];
-      let row = [];
-      let field = "";
-      let quoted = false;
-
-      text = text.replace(/^\uFEFF/, "");
-
-      for (let i = 0; i < text.length; i++) {
-        const c = text[i];
-
-        if (quoted) {
-          if (c === '"' && text[i + 1] === '"') {
-            field += '"';
-            i++;
-          } else if (c === '"') {
-            quoted = false;
-          } else {
-            field += c;
-          }
-        } else if (c === '"' && field === "") {
-          quoted = true;
-        } else if (c === ",") {
-          row.push(field);
-          field = "";
-        } else if (c === "\n") {
-          row.push(field);
-          rows.push(row);
-          row = [];
-          field = "";
-        } else if (c !== "\r") {
-          field += c;
-        }
-      }
-
-      if (field !== "" || row.length > 0) {
-        row.push(field);
-        rows.push(row);
-      }
-
-      const headers = rows.shift();
-
-      return rows
-        .filter(r => r.some(v => v.trim() !== ""))
-        .map(r => {
-          const item = {};
-          headers.forEach((header, i) => {
-            item[header.trim()] = (r[i] || "").trim();
-          });
-          return item;
-        });
-    }
-  
   async function loadStories() {
-    const response = await fetch(`./csv/highsan3.csv?v=${Date.now()}`);
+    const response = await fetch(`./csv/highsan2.csv?v=${Date.now()}`);
 
     if (!response.ok) {
       throw new Error("CSVを読み込めませんでした");
@@ -123,36 +76,33 @@
   });
 </script>
 
+##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
+##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
+##  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
 
-## 評価
-
+## 感想,評価
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ヒゲ物語、絶賛更新中！</title>
   <link rel="stylesheet" href="./css/highreview.css">
 </head>
-
-  <body>
+<body>
     <div class="container">
       <h2>📋 ヒゲ物語、絶賛更新中！</h2>
-
       <textarea
         id="msg"
         maxlength="500"
         placeholder="メッセージを入力してください..."
       ></textarea>
-
       <div class="button-area">
         <button id="sendBtn" onclick="saveMessage()">送信</button>
-
         <span
           id="counter"
           style="margin-left: 15px; color: #666; font-size: 14px"
         >
           0/500
         </span>
-
         <span style="margin-left: 20px; color: #000; font-size: 14px; font-weight: bold;"> 
           ※無料サービスを利用しているため、当日に連続して投稿に失敗した場合は、翌日に改めて投稿をお試しください。
         </span>
@@ -160,12 +110,9 @@
       <div class="table-wrapper">
         <div class="pagination">
           <button id="prevBtn" onclick="prevPage()">← 上一页</button>
-
           <span id="pageInfo" class="page-info"> 第 1 页 </span>
-
           <button id="nextBtn" onclick="nextPage()">下一页 →</button>
         </div>
-
         <table>
           <thead>
             <tr>
@@ -174,7 +121,6 @@
               <th class="date-col">投稿日時</th>
             </tr>
           </thead>
-
           <tbody id="messageTable">
             <tr>
               <td colspan="3" class="loading">読み込み中...</td>
@@ -183,5 +129,7 @@
         </table>
       </div>
     </div>
-      <script type="module" src="./js/highreview.js"></script>
-     </body>
+    <script type="module" src="./js/highreview.js"></script>
+</body>
+
+<button id="backToTop" title="ページ上部へ">↑</button>
