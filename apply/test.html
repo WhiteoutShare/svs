@@ -434,13 +434,13 @@
           countEl.className = "summary-count";
 
           const peopleIcon = document.createElement("span");
-          peopleIcon.textContent = "👥";
+          // peopleIcon.textContent = "👥";
 
           // countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
           if (total >= 1) {
-            countEl.append(peopleIcon, document.createTextNode(`あり`));
+            countEl.append(peopleIcon, document.createTextNode(`未申込あり`));
           } else {
-            countEl.append(peopleIcon, document.createTextNode(`なし`));
+            countEl.append(peopleIcon, document.createTextNode(`未申込なし`));
           }
 
           info.append(nameEl, countEl);
