@@ -9,7 +9,7 @@
 <main id="stories"></main>
 
 <script>
-  loadStories('./csv/highsan2.csv').catch(error => {
+  loadOneStory('./csv/highsan2.csv').catch(error => {
     console.error(error);
     document.getElementById("stories").textContent =
       "ストーリーの読み込みに失敗しました。CSVのパスを確認してください。";
