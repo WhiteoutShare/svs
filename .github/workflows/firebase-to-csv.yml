@@ -1,4 +1,4 @@
-name: Sync Latest Firebase Feedback to CSV
+name: Firebase Feedback to CSV
 
 on:
   workflow_dispatch:
