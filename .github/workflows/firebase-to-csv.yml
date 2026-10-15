@@ -1,0 +1,155 @@
+name: Sync Latest Firebase Feedback to CSV
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: firebase-to-csv
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch latest Firebase record and append CSV
+        env:
+          PROJECT_ID: whiteout-svs-highsan-backend
+        run: |
+          python3 <<'PY'
+          import csv
+          import json
+          import os
+          import urllib.request
+          from pathlib import Path
+
+          project_id = os.environ["PROJECT_ID"]
+          csv_path = Path("post/csv/highsan3.csv")
+
+          # 查询 Firestore 中最新的一条 feedback
+          url = (
+              "https://firestore.googleapis.com/v1/projects/"
+              + project_id
+              + "/databases/(default)/documents:runQuery"
+          )
+
+          payload = {
+              "structuredQuery": {
+                  "from": [{"collectionId": "feedback"}],
+                  "orderBy": [{
+                      "field": {"fieldPath": "createdAt"},
+                      "direction": "DESCENDING"
+                  }],
+                  "limit": 1
+              }
+          }
+
+          request = urllib.request.Request(
+              url,
+              data=json.dumps(payload).encode("utf-8"),
+              headers={"Content-Type": "application/json"},
+              method="POST"
+          )
+
+          with urllib.request.urlopen(request, timeout=30) as response:
+              result = json.loads(response.read().decode("utf-8"))
+
+          documents = [
+              item["document"]
+              for item in result
+              if "document" in item
+          ]
+
+          if not documents:
+              raise RuntimeError("Firebase にデータがありません")
+
+          fields = documents[0].get("fields", {})
+
+          def get_string(name, default=""):
+              value = fields.get(name, {})
+              return value.get("stringValue", default)
+
+          message = get_string("message")
+          image_url = get_string("imageUrl")
+          created_at = get_string("createdAt")
+
+          # 转换成 CSV 的五个字段
+          row = [
+              get_string("title", "最新の投稿"),
+              image_url,
+              "",
+              message,
+              ""
+          ]
+
+          if not message and not image_url:
+              raise RuntimeError("最新データに投稿内容がありません")
+
+          if not csv_path.exists():
+              raise FileNotFoundError(csv_path)
+
+          # 检查 CSV 表头
+          with csv_path.open(
+              "r", encoding="utf-8-sig", newline=""
+          ) as f:
+              reader = csv.DictReader(f)
+              expected = ["title", "image", "alt", "content", "next"]
+
+              if reader.fieldnames != expected:
+                  raise RuntimeError(
+                      f"CSVのヘッダーが一致しません: {reader.fieldnames}"
+                  )
+
+              existing_rows = list(reader)
+
+          # 避免重复追加同一条最新记录
+          if existing_rows:
+              last = existing_rows[-1]
+              if (
+                  last.get("content", "") == message
+                  and last.get("image", "") == image_url
+              ):
+                  print("最新データはすでに CSV に保存されています")
+                  raise SystemExit(0)
+
+          # 确保文件末尾存在换行符
+          with csv_path.open("rb+") as f:
+              f.seek(0, os.SEEK_END)
+              size = f.tell()
+
+              if size > 0:
+                  f.seek(-1, os.SEEK_END)
+                  if f.read(1) not in (b"\n", b"\r"):
+                      f.seek(0, os.SEEK_END)
+                      f.write(b"\n")
+
+          # 追加一行
+          with csv_path.open("a", encoding="utf-8", newline="") as f:
+              writer = csv.writer(f, lineterminator="\n")
+              writer.writerow(row)
+
+          print("已追加最新 Firebase 数据")
+          print("createdAt:", created_at)
+          print("CSV:", csv_path)
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add post/csv/highsan3.csv
+
+          if git diff --cached --quiet; then
+            echo "CSV に変更はありません"
+            exit 0
+          fi
+
+          git commit -m "Sync latest Firebase feedback to CSV"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
