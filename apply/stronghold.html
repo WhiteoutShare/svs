@@ -267,12 +267,12 @@
         <div id="summaryStatus" class="summary-status">集計中...</div>
 
         <!-- 投票済み同盟コード -->
-        <div class="section-title" style="margin-top: 24px">
+        <!-- <div class="section-title" style="margin-top: 24px">
           🏷️ 投票済み同盟コード
         </div>
         <div id="votedAlliances" class="voted-alliances">
           <span class="no-alliances">読み込み中...</span>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -304,7 +304,7 @@
       const fortSummary = document.getElementById("fortSummary");
       const strongholdSummary = document.getElementById("strongholdSummary");
       const summaryStatus = document.getElementById("summaryStatus");
-      const votedAlliances = document.getElementById("votedAlliances");
+      // const votedAlliances = document.getElementById("votedAlliances");
       const sendBtn = document.getElementById("sendBtn");
 
       // 同盟コードは入力中も大文字に統一
@@ -434,9 +434,14 @@
           countEl.className = "summary-count";
 
           const peopleIcon = document.createElement("span");
-          peopleIcon.textContent = "👥";
+          // peopleIcon.textContent = "👥";
 
-          countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
+          // countEl.append(peopleIcon, document.createTextNode(`${total} 件`));
+          if (total >= 1) {
+            countEl.append(peopleIcon, document.createTextNode(`あり`));
+          } else {
+            countEl.append(peopleIcon, document.createTextNode(`なし`));
+          }
 
           info.append(nameEl, countEl);
           card.append(iconEl, info);
@@ -461,8 +466,8 @@
       // 本周最新申请进行统计，同时显示已投票的同盟代码
       async function loadSummary() {
         summaryStatus.textContent = "集計中...";
-        votedAlliances.innerHTML =
-          '<span class="no-alliances">読み込み中...</span>';
+        // votedAlliances.innerHTML =
+        //   '<span class="no-alliances">読み込み中...</span>';
 
         try {
           const snapshot = await getDocs(collection(db, "feedback"));
@@ -529,24 +534,24 @@
 
           renderSummary(strongholdSummary, "砦", 12, "🛡️", strongholdCounts);
 
-          // 显示已投票同盟代码，去重并排序
-          votedAlliances.innerHTML = "";
+          // // 显示已投票同盟代码，去重并排序
+          // votedAlliances.innerHTML = "";
 
-          const allianceCodes = Array.from(latestByAlliance.keys()).sort();
+          // const allianceCodes = Array.from(latestByAlliance.keys()).sort();
 
-          if (allianceCodes.length < 3) {
-            const empty = document.createElement("span");
-            empty.className = "no-alliances";
-            empty.textContent = "投票した同盟がまだ十分ではありません。";
-            votedAlliances.appendChild(empty);
-          } else {
-            allianceCodes.forEach((code) => {
-              const item = document.createElement("span");
-              item.className = "alliance-code";
-              item.textContent = code;
-              votedAlliances.appendChild(item);
-            });
-          }
+          // if (allianceCodes.length < 3) {
+          //   const empty = document.createElement("span");
+          //   empty.className = "no-alliances";
+          //   empty.textContent = "投票した同盟がまだ十分ではありません。";
+          //   votedAlliances.appendChild(empty);
+          // } else {
+          //   allianceCodes.forEach((code) => {
+          //     const item = document.createElement("span");
+          //     item.className = "alliance-code";
+          //     item.textContent = code;
+          //     votedAlliances.appendChild(item);
+          //   });
+          // }
 
           summaryStatus.textContent = `今週の有効申込：${latestByAlliance.size} 同盟`;
         } catch (e) {
