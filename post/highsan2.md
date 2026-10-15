@@ -8,177 +8,142 @@
 # 🔥 ヒゲ物語
 ## ヒゲモノ エピソード2
 ## 📖 目次
-- [家の蔵](#家の蔵)
-- [そこにはまさかの、、](#そこにはまさかの)
-- [バックトゥザフューチャー](#バックトゥザフューチャー)
-- [ここはどこ？](#ここはどこ)
-- [危機一髪](#危機一髪)
-- [一難去ってまた一難](#一難去ってまた一難)
-- [先代スミスを探せ①](#先代スミスを探せ)
-- [先代スミスを探せ②](#先代スミスを探せ-1)
-- [先代スミスを探せ③](#先代スミスを探せ-2)
-- [先代スミスを探せ④](#先代スミスを探せ-3)
-- [いざ出発](#いざ出発)
-- [先代?](#先代)
-- [感動の再会](#感動の再会)
+<ul id="toc"></ul>
+<main id="stories"></main>
 
-## 家の蔵
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-01.png" alt="家の蔵">
-</div>
-<div class="blog-content">
-ある日、ひげっぴとスミスJr.は、家の蔵で布のかかった何かを見つける。果たしてこれはなんなのか。
-<br><br>
-次回「そこにはまさかの、、」
-</div>
-</div>
+  <script>
+    // CSVを解析する。引用符内のカンマにも対応。
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let quoted = false;
 
-## そこにはまさかの、、
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-02.png" alt="そこにはまさかの、、">
-</div>
-<div class="blog-content">
-なんとそこにはデロリアンが！思わずびっくりした2人。とりあえず、乗車してみることにする。
-<br><br>
-次回「バックトゥザフューチャー」
-</div>
-</div>
+      text = text.replace(/^\uFEFF/, "");
 
-## バックトゥザフューチャー
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-03.png" alt="バックトゥザフューチャー">
-</div>
-<div class="blog-content">
-デロリアンに乗車したふたりを待ち受けていたのは、まさかのタイムスリップ。
-どこにいくのか、この2人はしらない。
-<br><br>
-次回「ここはどこ？」
-</div>
-</div>
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
 
-## ここはどこ？
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-04.png" alt="ここはどこ？">
-</div>
-<div class="blog-content">
-たどり着いた先はまさかの原始時代。どうなってしまうのか！
-<br><br>
-次回「危機一髪」
-</div>
-</div>
+        if (quoted) {
+          if (c === '"' && text[i + 1] === '"') {
+            field += '"';
+            i++;
+          } else if (c === '"') {
+            quoted = false;
+          } else {
+            field += c;
+          }
+        } else if (c === '"' && field === "") {
+          quoted = true;
+        } else if (c === ",") {
+          row.push(field);
+          field = "";
+        } else if (c === "\n") {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = "";
+        } else if (c !== "\r") {
+          field += c;
+        }
+      }
 
-## 危機一髪
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-05.png" alt="危機一髪">
-</div>
-<div class="blog-content">
-間一髪のところで再びデロリアンに乗り込むことに成功。
-原始時代をあとに、現代へ戻ることにした。
-<br><br>
-次回「一難去ってまた一難」
-</div>
-</div>
+      if (field !== "" || row.length > 0) {
+        row.push(field);
+        rows.push(row);
+      }
 
-## 一難去ってまた一難
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-06.png" alt="一難去ってまた一難">
-</div>
-<div class="blog-content">
-現代に帰る予定が、途中でデロリアンから異音、、、！不時着したのは何と100前の世界。そして大破したデロリアン。どうする！！ひげ親子！
-<br><br>
-次回「先代スミスをさがせ①」
-</div>
-</div>
+      const headers = rows.shift();
 
-## 先代スミスを探せ①
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261006.png" alt="先代スミスを探せ①">
-</div>
-<div class="blog-content">
-デロリアンの開発者である先代スミスを探す親子、似顔絵をもとに聞き込み開始。ディカプリオに尋ねるものの居場所は掴めず、、果たして見つけることができるのか、、
-<br><br>
-次回「先代スミスを探せ②」
-</div>
-</div>
+      return rows
+        .filter(r => r.some(v => v.trim() !== ""))
+        .map(r => {
+          const item = {};
+          headers.forEach((header, i) => {
+            item[header.trim()] = (r[i] || "").trim();
+          });
+          return item;
+        });
+    }
 
-## 先代スミスを探せ②
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261007-07.jpg" alt="先代スミスを探せ②">
-</div>
-<div class="blog-content">
-そこにいた話せそうなサボテン🌵にも確認したが、返ってくる返事は「ジョーーーイ」のみ。先代スミスを見つけるにはまだまだ時間がかかりそうだ。
-<br><br>
-次回「先代スミスを探せ③」
-</div>
-</div>
+    // 目次用アンカーIDを生成
+    function createId(title, index) {
+      return "story-" + index;
+    }
 
-## 先代スミスを探せ③
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/20261008-01.jpg" alt="先代スミスを探せ③">
-</div>
-<div class="blog-content">
-愉快な仲間たちを見つけた親子。何やら知ってそうだ。先代スミスに似た人が、🍙を買って頬張っていたらしい。よし、おにぎり屋さんに聞き込みだ。 
-<br><br>
-次回「先代スミスを探せ④」
-</div>
-</div>
+    async function loadStories() {
+      const response = await fetch("./csv/highsan2.csv");
 
-## 先代スミスを探せ④
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/261009.png" alt="先代スミスを探せ④">
-</div>
-<div class="blog-content">
-おにぎり屋に到着。🍙を買いつつ聞き込みをしたところ、どうやら先代スミスらしき人物が常連の模様。早速、会いに行くことに。 
-<br><br>
-次回「いざ出発」
-</div>
-</div>
+      if (!response.ok) {
+        throw new Error("CSVを読み込めませんでした");
+      }
 
-## いざ出発
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/261012-01.png" alt="いざ出発">
-</div>
-<div class="blog-content">
-おにぎり屋と一緒に山奥へ、、なんとそこに鍛冶屋があった。果たして先代スミスと再開することができるのか。
-<br><br>
-次回「先代？」
-</div>
-</div>
+      const csvText = await response.text();
+      const stories = parseCSV(csvText);
 
-## 先代?
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/261013-01.png" alt="先代?">
-</div>
-<div class="blog-content">
-あの立ち振る舞い！それはまさしく先代スミス！やっとのことで、見つける🔍事ができたのであった。
-<br><br>
-次回「感動の再会」
-</div>
-</div>
+      const toc = document.getElementById("toc");
+      const container = document.getElementById("stories");
 
-## 感動の再会
-<div class="blog-item">
-<div class="blog-image">
-<img src="i/261014-01.png" alt="感動の再会">
-</div>
-<div class="blog-content">
-ついに先代スミスと感動の再会をはたした親子
-<br><br>
-エピソード2完結
-</div>
-</div>
+      stories.forEach((story, index) => {
+        const id = createId(story.title, index);
+
+        // 目次
+        const li = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = "#" + id;
+        link.textContent = story.title;
+        li.appendChild(link);
+        toc.appendChild(li);
+
+        // セクション
+        const section = document.createElement("section");
+        section.id = id;
+
+        const heading = document.createElement("h2");
+        heading.textContent = story.title;
+        section.appendChild(heading);
+
+        // blog-item
+        const item = document.createElement("div");
+        item.className = "blog-item";
+
+        const imageBox = document.createElement("div");
+        imageBox.className = "blog-image";
+
+        const img = document.createElement("img");
+        img.src = story.image;
+        img.alt = story.alt || story.title;
+
+        imageBox.appendChild(img);
+
+        const contentBox = document.createElement("div");
+        contentBox.className = "blog-content";
+
+        const description = document.createElement("p");
+        description.textContent = story.content;
+        contentBox.appendChild(description);
+
+        const next = document.createElement("p");
+
+        if (story.next) {
+          next.textContent = story.next;
+        }
+
+        contentBox.appendChild(next);
+
+        item.appendChild(imageBox);
+        item.appendChild(contentBox);
+        section.appendChild(item);
+        container.appendChild(section);
+      });
+    }
+
+    loadStories().catch(error => {
+      console.error(error);
+      document.getElementById("stories").textContent =
+        "ストーリーの読み込みに失敗しました。CSVのパスを確認してください。";
+    });
+  </script>
 
 ## [ホームページ](https://whiteoutshare.github.io/svs/post/highsan)
 ## [感想,評価](https://whiteoutshare.github.io/svs/post/highsan#感想評価)
