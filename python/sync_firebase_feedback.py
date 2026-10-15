@@ -221,7 +221,7 @@ def main():
     row = [
         title,
         local_image,
-        "",
+        title,
         message,
         next_value
     ]
