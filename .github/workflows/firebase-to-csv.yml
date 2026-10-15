@@ -1,4 +1,4 @@
-name: Sync Latest Firebase Feedback to CSV
+name: Firebase Feedback to CSV
 
 on:
   workflow_dispatch:
@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch latest Firebase record and append CSV
+      - name: Fetch latest Firebase record, save image and append CSV
         env:
           PROJECT_ID: whiteout-svs-highsan-backend
         run: |
@@ -26,11 +26,18 @@ jobs:
           import csv
           import json
           import os
+          import re
           import urllib.request
+          from datetime import datetime
           from pathlib import Path
+          from urllib.parse import urlparse
+          from zoneinfo import ZoneInfo
 
           project_id = os.environ["PROJECT_ID"]
           csv_path = Path("post/csv/highsan3.csv")
+          image_dir = Path("post/i")
+
+          image_dir.mkdir(parents=True, exist_ok=True)
 
           # 查询 Firestore 中最新的一条 feedback
           url = (
@@ -69,7 +76,8 @@ jobs:
           if not documents:
               raise RuntimeError("Firebase にデータがありません")
 
-          fields = documents[0].get("fields", {})
+          document = documents[0]
+          fields = document.get("fields", {})
 
           def get_string(name, default=""):
               value = fields.get(name, {})
@@ -77,19 +85,104 @@ jobs:
 
           message = get_string("message")
           image_url = get_string("imageUrl")
+          title = get_string("title", "最新の投稿")
           created_at = get_string("createdAt")
 
-          # 转换成 CSV 的五个字段
+          # 生成年月日时分秒文件名，优先使用 Firebase createdAt
+          if created_at:
+              try:
+                  timestamp = datetime.fromisoformat(
+                      created_at.replace("Z", "+00:00")
+                  )
+                  if timestamp.tzinfo is None:
+                      timestamp = timestamp.replace(
+                          tzinfo=ZoneInfo("Asia/Tokyo")
+                      )
+                  timestamp = timestamp.astimezone(
+                      ZoneInfo("Asia/Tokyo")
+                  )
+              except ValueError:
+                  timestamp = datetime.now(ZoneInfo("Asia/Tokyo"))
+          else:
+              timestamp = datetime.now(ZoneInfo("Asia/Tokyo"))
+
+          filename_base = timestamp.strftime("%Y%m%d%H%M%S")
+
+          # 将 Firebase 图片转存到 post/i/
+          local_image = ""
+
+          if image_url:
+              parsed_url = urlparse(image_url)
+
+              if parsed_url.scheme != "https" or not parsed_url.hostname:
+                  raise RuntimeError("图片 URL 必须是有效的 HTTPS 地址")
+
+              # 根据 URL 后缀确定图片扩展名
+              suffix = Path(parsed_url.path).suffix.lower()
+              allowed_suffixes = {
+                  ".jpg", ".jpeg", ".png", ".gif",
+                  ".webp", ".avif", ".svg", ".bmp"
+              }
+
+              if suffix not in allowed_suffixes:
+                  suffix = ".jpg"
+
+              image_path = image_dir / f"{filename_base}{suffix}"
+
+              # 同一秒出现同名文件时，避免覆盖已有图片
+              counter = 1
+              while image_path.exists():
+                  image_path = image_dir / (
+                      f"{filename_base}_{counter}{suffix}"
+                  )
+                  counter += 1
+
+              image_request = urllib.request.Request(
+                  image_url,
+                  headers={"User-Agent": "Mozilla/5.0"}
+              )
+
+              with urllib.request.urlopen(
+                  image_request, timeout=60
+              ) as response:
+                  content_type = response.headers.get(
+                      "Content-Type", ""
+                  ).split(";")[0].strip().lower()
+
+                  if not content_type.startswith("image/"):
+                      raise RuntimeError(
+                          f"URL 返回的不是图片: {content_type}"
+                      )
+
+                  image_data = response.read(20 * 1024 * 1024 + 1)
+
+              if len(image_data) > 20 * 1024 * 1024:
+                  raise RuntimeError("图片超过 20 MB，停止下载")
+
+              if not image_data:
+                  raise RuntimeError("下载的图片为空")
+
+              with image_path.open("xb") as f:
+                  f.write(image_data)
+
+              # 写入网站可访问的本地相对路径
+              local_image = "/" + image_path.as_posix()
+
+              print("图片已转存:", image_path)
+          else:
+              print("最新记录没有图片")
+
+          # CSV 五个字段
           row = [
-              get_string("title", "最新の投稿"),
-              image_url,
+              title,
+              local_image,
               "",
               message,
               ""
           ]
 
-          if not message and not image_url:
-              raise RuntimeError("最新データに投稿内容がありません")
+          if not message and not local_image:
+              raise RuntimeError("最新数据に投稿内容がありません")
 
           if not csv_path.exists():
               raise FileNotFoundError(csv_path)
@@ -108,12 +201,13 @@ jobs:
 
               existing_rows = list(reader)
 
-          # 避免重复追加同一条最新记录
+          # 避免重复追加同一条记录
           if existing_rows:
               last = existing_rows[-1]
               if (
                   last.get("content", "") == message
-                  and last.get("image", "") == image_url
+                  and last.get("image", "") == local_image
+                  and last.get("title", "") == title
               ):
                   print("最新データはすでに CSV に保存されています")
                   raise SystemExit(0)
@@ -130,7 +224,9 @@ jobs:
                       f.write(b"\n")
 
           # 追加一行
-          with csv_path.open("a", encoding="utf-8", newline="") as f:
+          with csv_path.open(
+              "a", encoding="utf-8", newline=""
+          ) as f:
               writer = csv.writer(f, lineterminator="\n")
               writer.writerow(row)
 
@@ -144,7 +240,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add post/csv/highsan3.csv
+          git add post/csv/highsan3.csv post/i/
 
           if git diff --cached --quiet; then
             echo "CSV に変更はありません"
