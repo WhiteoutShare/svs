@@ -58,7 +58,7 @@
     }
 
     async function loadStories(csvPath) {
-      const response = await fetch(${csvPath}?v=${Date.now()});
+      const response = await fetch(`${csvPath}?v=${Date.now()}`);
 
       if (!response.ok) {
         throw new Error("CSVを読み込めませんでした");
