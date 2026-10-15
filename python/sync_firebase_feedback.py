@@ -166,10 +166,12 @@ def append_csv(row):
     if existing_rows:
         last = existing_rows[-1]
 
+        # 同时比较 title、image、content、next，避免漏掉 Next 字段变化
         if (
             last.get("title", "") == row[0]
             and last.get("image", "") == row[1]
             and last.get("content", "") == row[3]
+            and last.get("next", "") == row[4]
         ):
             print("最新数据已经保存到 CSV")
             return False
@@ -199,29 +201,29 @@ def main():
     document_name, fields = fetch_latest_feedback()
 
     title = get_string(fields, "title", "最新の投稿")
+    next_value = get_string(fields, "next")
     message = get_string(fields, "message")
     image_url = get_string(fields, "imageUrl")
     timestamp = get_timestamp(fields)
 
-    if not message and not image_url:
+    if not title and not next_value and not message and not image_url:
         raise RuntimeError("最新记录没有投稿内容")
 
-    # 使用 Firestore 文档 ID 作为稳定的去重依据
+    # 使用 Firestore 文档 ID 作为稳定的去重依据（当前 CSV 没有 ID 列）
     document_id = document_name.rsplit("/", 1)[-1]
 
     if not document_id:
         raise RuntimeError("无法获取 Firestore 文档 ID")
 
-    # 检查 CSV 是否已经包含该文档
-    # 兼容现有五列 CSV：这里只能根据内容和图片进行去重
     local_image = save_image(image_url, timestamp)
 
+    # CSV 列顺序：title, image, alt, content, next
     row = [
         title,
         local_image,
         "",
         message,
-        ""
+        next_value
     ]
 
     append_csv(row)
