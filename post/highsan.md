@@ -5,6 +5,130 @@
 
 # 🔥 ヒゲ物語、絶賛更新中！
 
+<main id="stories"></main>
+
+<script>
+      // CSVを解析する。引用符内のカンマにも対応。
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let field = "";
+      let quoted = false;
+
+      text = text.replace(/^\uFEFF/, "");
+
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i];
+
+        if (quoted) {
+          if (c === '"' && text[i + 1] === '"') {
+            field += '"';
+            i++;
+          } else if (c === '"') {
+            quoted = false;
+          } else {
+            field += c;
+          }
+        } else if (c === '"' && field === "") {
+          quoted = true;
+        } else if (c === ",") {
+          row.push(field);
+          field = "";
+        } else if (c === "\n") {
+          row.push(field);
+          rows.push(row);
+          row = [];
+          field = "";
+        } else if (c !== "\r") {
+          field += c;
+        }
+      }
+
+      if (field !== "" || row.length > 0) {
+        row.push(field);
+        rows.push(row);
+      }
+
+      const headers = rows.shift();
+
+      return rows
+        .filter(r => r.some(v => v.trim() !== ""))
+        .map(r => {
+          const item = {};
+          headers.forEach((header, i) => {
+            item[header.trim()] = (r[i] || "").trim();
+          });
+          return item;
+        });
+    }
+  
+  async function loadStories() {
+    const response = await fetch("./csv/highsan2.csv");
+
+    if (!response.ok) {
+      throw new Error("CSVを読み込めませんでした");
+    }
+
+    const csvText = await response.text();
+    const stories = parseCSV(csvText);
+
+    const container = document.getElementById("stories");
+
+    // CSVの最後の1件だけ取得
+    if (stories.length === 0) {
+      container.textContent = "ストーリーがありません。";
+      return;
+    }
+
+    const story = stories[stories.length - 1];
+
+    // セクション
+    const section = document.createElement("section");
+
+    const heading = document.createElement("h2");
+    heading.textContent = story.title;
+    section.appendChild(heading);
+
+    // blog-item
+    const item = document.createElement("div");
+    item.className = "blog-item";
+
+    const imageBox = document.createElement("div");
+    imageBox.className = "blog-image";
+
+    const img = document.createElement("img");
+    img.src = story.image;
+    img.alt = story.alt || story.title;
+
+    imageBox.appendChild(img);
+
+    const contentBox = document.createElement("div");
+    contentBox.className = "blog-content";
+
+    const description = document.createElement("p");
+    description.textContent = story.content;
+    contentBox.appendChild(description);
+
+    if (story.next) {
+      const next = document.createElement("p");
+      next.textContent = story.next;
+      contentBox.appendChild(next);
+    }
+
+    item.appendChild(imageBox);
+    item.appendChild(contentBox);
+    section.appendChild(item);
+
+    container.appendChild(section);
+  }
+
+  loadStories().catch(error => {
+    console.error(error);
+    document.getElementById("stories").textContent =
+      "ストーリーの読み込みに失敗しました。CSVのパスを確認してください。";
+  });
+</script>
+
 ## 感動の再会
 <div class="blog-item">
 <div class="blog-image">
