@@ -9,13 +9,13 @@
 <main id="stories"></main>
 
 <script>
-  loadOneStory('./csv/highsan2.csv').catch(error => {
+  loadOneStory('./csv/highsan3.csv').catch(error => {
     console.error(error);
     document.getElementById("stories").textContent =
       "ストーリーの読み込みに失敗しました。CSVのパスを確認してください。";
   });
 </script>
-
+##  [ヒゲモノ エピソード3](https://whiteoutshare.github.io/svs/post/highsan3)
 ##  [ヒゲモノ エピソード2](https://whiteoutshare.github.io/svs/post/highsan2)
 ##  [ヒゲモノ エピソード1](https://whiteoutshare.github.io/svs/post/highsan1)
 ##  [4471王国限定｜GiftCode 自動配布用アンケート](https://forms.gle/6sC5Z22fDnEyPhZv9)
