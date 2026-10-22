@@ -4,6 +4,7 @@
 <!--
 ## 📢 臨時情報共有
 - 🆕 [同盟大作戦（最新情報）](https://whiteoutshare.github.io/svs/tmp/261012)  
+
 -->
 
 <!--
@@ -13,6 +14,7 @@
 * 💬 <a href="https://whiteoutshare.github.io/svs/msgs" target="_blank" rel="noopener noreferrer">SVS参加情報・意見・感想掲示板</a>
 
 SVSに関する提案や意見・感想はもちろん、各同盟で必要な管理ツールのアイデアや、データ整理に関する相談なども自由に投稿してください！  
+
 -->
 ## ⚔️ 王城位置配置
 
