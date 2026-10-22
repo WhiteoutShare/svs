@@ -4,7 +4,8 @@
 <!--
 ## 📢 臨時情報共有
 - 🆕 [同盟大作戦（最新情報）](https://whiteoutshare.github.io/svs/tmp/261012)
-
+-->
+<!--
 ## ⚔️ SVS関連
 
 * 🏰 <a href="https://whiteoutshare.github.io/svs/rule" target="_blank" rel="noopener noreferrer">SVS 王城決戦準備フェーズ・ルール</a>
