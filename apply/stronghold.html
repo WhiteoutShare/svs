@@ -409,13 +409,13 @@
           const card = document.createElement("div");
           card.className = "summary-card";
 
-          if (total >= 1 && total <= 2) {
+          if (total >= 1 && total <= 3) {
             card.classList.add("status-green");
-          } else if (total >= 3 && total <= 4) {
+          } else if (total >= 4 && total <= 6) {
             card.classList.add("status-yellow");
-          } else if (total >= 5 && total <= 6) {
+          } else if (total >= 7 && total <= 9) {
             card.classList.add("status-red");
-          } else if (total >= 7) {
+          } else if (total >= 10) {
             card.classList.add("status-red-hard");
           }
 
