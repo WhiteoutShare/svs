@@ -279,6 +279,8 @@
         collection,
         addDoc,
         getDocs,
+        query, 
+        where,
       } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
       const firebaseConfig = {
@@ -465,7 +467,13 @@
         //   '<span class="no-alliances">読み込み中...</span>';
 
         try {
-          const snapshot = await getDocs(collection(db, "feedback"));
+          const snapshot = await getDocs(
+            query(
+              collection(db, "feedback"),
+              where("createdAt", ">=", new Date(weekStart).toISOString()),
+              where("createdAt", "<=", new Date(now).toISOString())
+            )
+          );
           const now = Date.now();
           const weekStart = getWeekStartJST(now);
 
