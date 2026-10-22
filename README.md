@@ -14,7 +14,7 @@ SVSに関する提案や意見・感想はもちろん、各同盟で必要な�
 -->
 ## ⚔️ 王城位置配置
 
-<a href="https://whiteoutshare.github.io/svs/castle/261022" target="_blank" rel="noopener noreferrer">王城位置配置・ルール</a>
+* 🏰 <a href="https://whiteoutshare.github.io/svs/castle/261022" target="_blank" rel="noopener noreferrer">王城位置配置・ルール</a>
 
 
 ## 🏯 要塞・砦 申込掲示板
