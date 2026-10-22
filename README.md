@@ -1,10 +1,10 @@
 # 目標
 
 データ整理や便利なツールの作成を通じて、4471王国をもっと活発で、気軽に楽しめる環境にしていきたいと思っています！
-
+<!--
 ## 📢 臨時情報共有
 - 🆕 [同盟大作戦（最新情報）](https://whiteoutshare.github.io/svs/tmp/261012)
-
+-->
 ## ⚔️ SVS関連
 
 * 🏰 <a href="https://whiteoutshare.github.io/svs/rule" target="_blank" rel="noopener noreferrer">SVS 王城決戦準備フェーズ・ルール</a>
