@@ -2,6 +2,8 @@
 
 データ整理や便利なツールの作成を通じて、4471王国をもっと活発で、気軽に楽しめる環境にしていきたいと思っています！
 
+##  <a href="https://forms.gle/dB6ttTndLrJ6kU8n8" target="_blank" rel="noopener noreferrer">ご意見・お困りごと相談窓口</a>
+
 ## ⚔️ 王城位置配置
 
 * 🏰 <a href="https://whiteoutshare.github.io/svs/castle/261022" target="_blank" rel="noopener noreferrer">王城位置配置・ルール</a>
