@@ -6,7 +6,7 @@
 
 ## ⚔️ 王城位置配置
 
-* 🏰 <a href="https://whiteoutshare.github.io/svs/castle/261022" target="_blank" rel="noopener noreferrer">王城位置配置・ルール</a>
+* 🏰 <a href="https://whiteoutshare.github.io/svs/svs/261107" target="_blank" rel="noopener noreferrer">王城位置配置・ルール</a>
 
 
 ## 🏯 要塞・砦 申込掲示板
